@@ -168,21 +168,3 @@ SOFTWARE.
 ```
 
 ---
-
-## 🗂️ Initial Repository Structure
-```
-the-dragons-vault/
-├── README.md
-├── LICENSE
-├── CONTRIBUTING.md
-├── .gitignore
-├── chapters/
-│   └── 5-leadership/
-│       └── 5.1-security-team-leadership/
-│           ├── README.md
-│           ├── section_5_1_01_philosophy.yaml
-│           ├── section_5_1_02_cognitive_diversity.yaml
-│           ├── ... (all 35 sections)
-│           └── COMPLETE_CHAPTER_5.1.md
-└── templates/
-    └── (empty for now, will add later)
