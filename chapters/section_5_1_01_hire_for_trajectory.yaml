@@ -1,0 +1,410 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "01"
+  title: "Hire for Trajectory Not Resume"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 6
+
+# ============================================================================
+# SECTION 01: HIRE FOR TRAJECTORY NOT RESUME
+# ============================================================================
+
+hire_for_trajectory_not_resume:
+  
+  core_philosophy:
+    concept: |
+      The biggest mistake new managers make is hiring for what someone has done 
+      rather than what they can become. A candidate with a perfect resume who has 
+      stopped learning is less valuable than a hungry engineer with gaps in their 
+      experience but insatiable curiosity.
+      
+      You're not hiring for today - you're hiring for three years from now when 
+      this person has grown into a force multiplier on your team.
+    
+    why_this_matters: |
+      Your best hires will be people who grow 3-4 levels during their time with you. 
+      The person who's already "perfect" has nowhere to go. The person with high 
+      trajectory will become your future senior engineer, tech lead, or manager.
+  
+  # --------------------------------------------------------------------------
+  # What to Look For
+  # --------------------------------------------------------------------------
+  
+  evaluation_criteria:
+    
+    learning_velocity:
+      definition: "How fast do they pick up new concepts? Do they synthesize information or just memorize?"
+      
+      how_to_evaluate:
+        - "Ask: 'Tell me about something complex you learned recently' - can they explain it clearly?"
+        - "Give them a new concept during interview - do they grasp it quickly?"
+        - "Look at career progression - are they taking on increasingly challenging work?"
+        - "Check side projects, blog, GitHub - are they learning outside work?"
+      
+      strong_signal:
+        example: |
+          Candidate taught themselves Rust in 6 months and built an open-source 
+          detection tool used by 50+ security teams. When asked about learning process: 
+          "I started with small experiments, read the Rust book, contributed to existing 
+          projects to learn idioms, then built something real to solidify understanding."
+        
+        why_strong: "Self-directed learning, completed non-trivial project, shared with community, can articulate methodology"
+      
+      weak_signal:
+        example: |
+          Candidate used same tech stack for 5 years. When asked what they learned 
+          recently: "I've gotten really good at Splunk." No new languages, no new 
+          security domains, no expanding beyond comfort zone.
+        
+        why_weak: "Not challenging themselves, comfortable but stagnant, will be same person in 3 years"
+    
+    self_awareness:
+      definition: "Do they know what they don't know? Can they admit mistakes without defensiveness?"
+      
+      how_to_evaluate:
+        - "Ask: 'What area do you need to grow in?' - specific answer or vague?"
+        - "Ask: 'Tell me about a significant mistake' - own it or blame others?"
+        - "Ask: 'What feedback was hard to hear?' - acknowledge or dismiss?"
+      
+      strong_signal:
+        example: |
+          "I'm strong at detection logic but my Python skills are just functional, not 
+          elegant. I can make things work but code isn't maintainable at scale. I want 
+          to learn better software engineering practices - clean architecture, testing 
+          patterns. I've been reading 'Clean Code' and trying to apply it."
+        
+        why_strong: "Specific about strengths AND gaps, has action plan, separates what they know from what they don't"
+      
+      weak_signal:
+        example: "I don't really have any weaknesses. I'm pretty good at everything. Maybe I work too hard sometimes?"
+        
+        why_weak: "Classic fake weakness. Lacks self-awareness or being dishonest. Everyone has growth areas."
+    
+    problem_solving_approach:
+      definition: "Do they break down complex problems systematically? Ask clarifying questions before jumping to solutions?"
+      
+      how_to_evaluate:
+        - "Give complex scenario - how do they approach it?"
+        - "Do they ask about constraints, data availability, trade-offs?"
+        - "Can they explain reasoning step-by-step?"
+        - "Consider multiple approaches or fixate on first idea?"
+      
+      strong_signal:
+        example: |
+          Asked "How would you detect lateral movement?", candidate responds:
+          
+          "First, I'd understand what data sources we have - Windows Event Logs? 
+          Network traffic? EDR telemetry? Each gives different visibility.
+          
+          Second, what's our baseline for normal authentication patterns? Lateral 
+          movement is about anomalies - need to know what normal looks like.
+          
+          Third, what techniques are we concerned about? Pass-the-Hash, RDP, WMI, 
+          PSExec - each has different artifacts.
+          
+          Then I'd design detections based on what we have. If we have Event ID 4624 
+          with network logon type, detect authentication from unusual sources. If we 
+          have EDR, catch process creation from remote systems. I'd baseline normal 
+          service accounts vs user accounts.
+          
+          Challenge is false positives - legitimate admin activity looks similar. 
+          Start with high-confidence indicators and tune based on environment."
+        
+        why_strong: "Systematic approach, asks about constraints first, considers multiple techniques, thinks about operational reality"
+      
+      weak_signal:
+        example: "You just write a Sigma rule for Event ID 4624 with network logon type and look for unusual authentication."
+        
+        why_weak: "Jumps to single solution without context, doesn't consider data availability or tuning"
+    
+    technical_depth:
+      definition: "Do they understand fundamentals or just memorize tool syntax? Can they explain WHY things work?"
+      
+      how_to_evaluate:
+        - "Ask 'Why does [technique] work?' not 'How do you detect it?'"
+        - "Ask them to explain trade-offs between approaches"
+        - "Probe multiple levels deep - can they go from concept to implementation?"
+      
+      strong_signal:
+        example: |
+          Asked about Sigma rules, candidate explains:
+          
+          "Sigma is vendor-agnostic detection format - standardized way to express 
+          detection logic that compiles to different SIEM languages. Benefit is 
+          portability - write once, works in Splunk, Elastic, QRadar.
+          
+          Trade-off is you lose platform-specific features. Splunk has powerful 
+          statistical commands that don't map to other platforms, so pure Sigma 
+          can't use those. Hand-tuned native queries often perform better.
+          
+          In practice, we use Sigma for common detections that should work everywhere, 
+          write native queries for complex, performance-sensitive cases. Sigma compiler 
+          is helpful but you still need to understand target platform."
+        
+        why_strong: "Understands problem Sigma solves, articulates benefits and trade-offs, practical experience with when to use"
+      
+      weak_signal:
+        example: "Sigma rules are YAML files that detect threats. You write detection logic and it works in any SIEM."
+        
+        why_weak: "Surface-level understanding, no appreciation of trade-offs, sounds like read a blog post but haven't used it"
+    
+    communication_skills:
+      definition: "Can they explain complex topics to different audiences? Do they listen and adjust?"
+      
+      how_to_evaluate:
+        - "Ask them to explain complex project - do they organize thoughts clearly?"
+        - "Do they use jargon appropriately or inappropriately?"
+        - "Do they check for understanding or just monologue?"
+        - "When you interrupt with question, do they listen or wait to continue?"
+      
+      strong_signal:
+        example: |
+          Explaining detection tuning:
+          
+          "Think of it like spam filters for email. At first, lots of legitimate emails 
+          get caught as spam - those are false positives. You teach the filter what's 
+          real vs spam by marking FPs. Over time it learns and gets better.
+          
+          Security detections are the same. Initial version catches the attack but also 
+          20 legitimate things. We investigate each alert, mark as true or false positive, 
+          then adjust detection logic. Maybe exclude certain users, add contextual checks, 
+          change threshold.
+          
+          Goal is high true positive rate with low false positive rate. Under 5% FP is 
+          our target - anything higher and analysts start ignoring alerts."
+        
+        why_strong: "Uses analogy non-security person understands, explains clearly, provides concrete metrics"
+      
+      weak_signal:
+        example: "We used Bayesian classifier with feature engineering on n-gram distributions to achieve 0.94 AUC-ROC for binary classification in FP reduction pipeline."
+        
+        why_weak: "Unnecessary jargon, doesn't adjust for audience, trying to impress rather than communicate"
+    
+    ownership_mindset:
+      definition: "Do they take responsibility for outcomes or blame external factors? Driver or passenger?"
+      
+      how_to_evaluate:
+        - "Ask about failed project - what's their narrative?"
+        - "Ask about challenges - focus on what they could or couldn't control?"
+        - "Listen for language patterns - 'I did', 'we did', 'they did'"
+      
+      strong_signal:
+        example: |
+          "Our detection platform launch failed - we built it but nobody used it. In 
+          hindsight, I made a critical mistake: I was so focused on building the perfect 
+          technical solution that I didn't get buy-in from the SOC team early enough. 
+          They had existing workflows and we were asking them to change without proving 
+          value first.
+          
+          What I learned: involve users from day one. Show prototypes, get feedback early 
+          and often, prove value incrementally. Now when I build something, I find 2-3 
+          early adopters and make sure it solves their real problems before scaling."
+        
+        why_strong: "Takes personal responsibility, identifies specific lesson, changed behavior, focuses on what they could control"
+      
+      weak_signal:
+        example: "Project failed because management kept changing requirements and other team didn't deliver their APIs on time. Also didn't have enough resources."
+        
+        why_weak: "Blames everyone else, no self-reflection on what they could have done differently, victim mentality"
+    
+    passion_for_security:
+      definition: "Are they genuinely excited about security or just chasing a paycheck?"
+      
+      how_to_evaluate:
+        - "What security blogs, researchers, news sources do they follow?"
+        - "Do they have security-related side projects or open-source contributions?"
+        - "Do they participate in security community (conferences, CTFs, Twitter)?"
+        - "Why did they get into security? Origin story reveals motivation."
+      
+      strong_signal:
+        example: |
+          "I got into security after my university got hit by ransomware. I was fascinated 
+          by how attackers operated - they moved laterally, escalated privileges, exfiltrated 
+          data before encrypting. I started reading everything about attack techniques.
+          
+          I discovered MITRE ATT&CK and it was like a roadmap. Started doing CTFs on weekends 
+          to understand offensive techniques. Built home lab to practice. Contributed detections 
+          to open-source projects.
+          
+          What I love about security is the adversarial nature - it's constantly evolving. 
+          You can't just learn something once and be done. Attackers adapt, you adapt back. 
+          It's intellectually challenging in a way other domains aren't."
+        
+        why_strong: "Clear origin story driven by curiosity, ongoing learning outside work, community participation, articulates what excites them"
+      
+      weak_signal:
+        example: "Security seems like a good career move. The pay is good and it's a growing field."
+        
+        why_weak: "Mercenary mindset - will leave for slightly better pay, not intrinsically motivated, won't put in extra effort"
+  
+  # --------------------------------------------------------------------------
+  # Red Flags to Avoid
+  # --------------------------------------------------------------------------
+  
+  red_flags:
+    
+    the_know_it_all:
+      behavior: "Claims expertise in everything, gets defensive when challenged, dismisses others' perspectives"
+      
+      interview_signs:
+        - "Actually, the way you're thinking about that is wrong..."
+        - "Interrupts your questions to 'correct' your assumptions"
+        - "Cannot name a single thing they don't know or person they've learned from"
+      
+      why_dangerous: "Won't learn from others, won't accept feedback, creates toxic team dynamics"
+      
+      team_impact: "Team members stop sharing ideas because know-it-all shoots them down. Knowledge sharing stops. Innovation dies."
+    
+    the_tool_focused_thinker:
+      behavior: "Can list 20 security tools but struggles with fundamental concepts"
+      
+      interview_signs:
+        - "How would you detect [attack]? → Use [commercial tool]"
+        - "Can't explain how tool works under the hood"
+        - "Stumped when asked 'What if you don't have that tool?'"
+      
+      why_dangerous: "When tool doesn't work or isn't available, they're helpless. Can't troubleshoot, can't build custom solutions."
+      
+      team_impact: "Perpetual junior contributor even after years. Can't grow into senior roles requiring deep understanding."
+    
+    the_external_blamer:
+      behavior: "Every failure was someone else's fault or bad luck"
+      
+      interview_signs:
+        - "Had 5 jobs in 3 years because every company had terrible management"
+        - "Every project failure story blames others - other teams, management, lack of resources"
+        - "No examples of learning from their own mistakes"
+      
+      why_dangerous: "Won't take ownership, will poison team culture with negativity, won't improve"
+      
+      team_impact: "Culture of blame spreads. Team morale drops. Finger-pointing instead of problem-solving."
+    
+    the_non_curious:
+      behavior: "Doesn't ask questions during interview. No interest in role, team, or problems beyond surface."
+      
+      interview_signs:
+        - "At end of interview: 'No, I don't have any questions for you'"
+        - "Hasn't looked at your company, doesn't know what you do"
+        - "Can't articulate why they want this specific role"
+      
+      why_dangerous: "Not interested in work, just needs a job. Won't seek help when stuck."
+      
+      team_impact: "Makes preventable mistakes because won't ask for help. Low engagement. Likely to leave quickly."
+    
+    the_title_chaser:
+      behavior: "Only cares about next promotion, not about actual work or impact"
+      
+      interview_signs:
+        - "First questions: 'What's path to senior/staff/principal? How fast can people get promoted?'"
+        - "Talks more about titles than technical work"
+        - "Asks about promotion criteria before understanding role"
+      
+      why_dangerous: "Will optimize for promotion metrics instead of team success. Won't help others."
+      
+      team_impact: "Politics over substance. Collaboration suffers because everyone optimizing for individual advancement."
+    
+    the_poor_communicator:
+      behavior: "Cannot explain their work clearly. Answers rambling, full of jargon, no structure."
+      
+      interview_signs:
+        - "Answers are 10 minutes long with no clear point"
+        - "Uses maximum jargon even when simpler terms would work"
+        - "Can't adjust explanation when you look confused"
+      
+      why_dangerous: "Can't work with other teams. Can't present to leadership. Can't document work."
+      
+      team_impact: "Becomes siloed. Limits their impact and team's visibility. Poor documentation makes it hard for others to build on work."
+  
+  # --------------------------------------------------------------------------
+  # Comparison Example
+  # --------------------------------------------------------------------------
+  
+  comparison_example:
+    scenario: "Hiring for mid-level Detection Engineer (L4) position"
+    
+    candidate_a_perfect_resume:
+      background:
+        years_experience: 10
+        companies: "Google, Facebook, Uber"
+        achievements: "Built 5 detection systems, speaks at conferences, resume looks incredible"
+      
+      interview_performance:
+        technical: "Answers all questions correctly and confidently"
+        depth: "Strong knowledge of detection tools and frameworks"
+        breadth: "Has worked with many technologies"
+        presentation: "Polished style, clearly done this before"
+      
+      red_flags_observed:
+        learning_velocity: "When asked what they learned recently: 'I've been refining what I already know. Pretty much figured out detection engineering at this point.'"
+        curiosity: "Didn't ask a single question about our environment, challenges, team structure"
+        problem_solving: "Every answer was 'At Facebook we did it this way...' No adaptation to our context"
+        self_awareness: "When asked about growth areas: 'I'm pretty much at expert level. Maybe I could learn management but focused on IC work.'"
+        attitude: "Slightly dismissive of our current approach. 'Yeah, we solved that problem 5 years ago at Google.'"
+      
+      decision: "NO HIRE"
+      
+      reasoning: |
+        Perfect resume but zero learning velocity. This person plateaued 2-3 years ago 
+        and is now coasting on credentials. They'll be expensive ($200K+), hard to give 
+        feedback to (they think they know everything), and won't grow. In 2 years they'll 
+        still be doing the same thing while teammates who started behind them surpass them.
+        
+        The brand names on resume are impressive but this person stopped learning when 
+        they got comfortable. Will bring bad attitude - "at my last company we did it 
+        better" without recognizing our different constraints.
+        
+        Hard pass. Better to hire someone still learning than someone who's stopped.
+    
+    candidate_b_hungry_learner:
+      background:
+        years_experience: 4
+        companies: "Two smaller companies (Series B startup, mid-size company)"
+        achievements: "Built 1 detection system, maintains small open-source detection tool, resume good but not spectacular"
+      
+      interview_performance:
+        technical: "Answers most questions correctly, admits when doesn't know something"
+        depth: "Solid fundamental knowledge, can explain reasoning"
+        breadth: "Some gaps but connects new concepts to known ones quickly"
+        presentation: "Clear and humble communication, adjusts based on feedback"
+      
+      positive_signals:
+        learning_velocity: "Taught myself Rust last year because I wanted faster detection tooling. It was hard but now I love it. I read security research papers most weekends."
+        curiosity: "Asked 10+ thoughtful questions: How do you balance coverage vs FP rate? What's your detection-as-code philosophy? What challenges are you hoping this role solves?"
+        problem_solving: "When given scenario they hadn't seen, broke it down systematically, asked clarifying questions, arrived at reasonable solution"
+        self_awareness: "I'm strong at detection logic. My software engineering skills are still developing - I can make things work but code isn't as maintainable as I'd like."
+        attitude: "Humble and excited. 'I'd love to learn from your senior engineers. The scale you operate at is exactly the challenge I'm looking for.'"
+      
+      decision: "STRONG HIRE at L4"
+      
+      reasoning: |
+        High trajectory candidate. Current skills slightly below ideal but learning velocity 
+        is exceptional. They'll be senior engineer (L5) within 18 months based on growth rate.
+        
+        The self-awareness and hunger to learn are rare and valuable. These are the people 
+        who become force multipliers on your team. The open-source contribution shows they 
+        code outside work hours because they enjoy it - that passion is hard to find.
+        
+        The humility means they'll accept feedback and grow quickly. The curiosity means 
+        they'll proactively solve problems instead of waiting for direction.
+        
+        Easy hire. Give me 5 of these over 5 "perfect resume" candidates any day.
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Hire for trajectory (where they're going) not credentials (where they've been)"
+    - "Learning velocity is the #1 predictor of future success"
+    - "Self-awareness separates people who grow from people who plateau"
+    - "Problem-solving approach matters more than knowing specific tools"
+    - "Passionate curiosity about security can't be taught - hire for it"
+    - "One know-it-all can poison an entire team - avoid at all costs"
+    - "The hungry learner at L4 becomes your senior engineer at L5 within 18 months"
+    - "The 'perfect' candidate who's stopped learning stays at same level for years"
+
+---
