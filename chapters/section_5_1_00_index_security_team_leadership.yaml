@@ -1,0 +1,461 @@
+---
+document_info:
+  chapter: "5.1"
+  title: "Security Team Leadership - The Dragon's Command"
+  subtitle: "Building, Leading, and Scaling Elite Security Teams"
+  version: "1.0.0"
+  part: "Part V: Leadership and Management"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  classification: "Security Operating Manual"
+
+metadata:
+  dragon_metaphor: |
+    The ancient dragon does not rule through fear alone, though its power is 
+    unmatched. It commands through wisdom earned across centuries, through the 
+    careful cultivation of its domain, and through the strategic deployment of 
+    its considerable strengths. A dragon knows when to breathe fire and when to 
+    listen. It understands that true power lies not in hoarding gold, but in 
+    building a stronghold that can withstand any siege.
+    
+    As a security leader, you are the dragon of your domain. Your team is your 
+    stronghold, each member a carefully selected scale in your armor. This chapter 
+    is the accumulated wisdom of security leaders who have built teams from nothing, 
+    navigated organizational politics, responded to breaches at 3 AM and presented 
+    to boards at 9 AM.
+  
+  scope:
+    covers:
+      - "Building security teams from zero to 50+ engineers"
+      - "Hiring processes from screening to offer negotiation"
+      - "Complete manager operating system (1-on-1s, performance, feedback)"
+      - "Career development and growth frameworks"
+      - "Executive communication and stakeholder management"
+      - "Technical roadmap development and prioritization"
+      - "Crisis leadership and incident command"
+      - "Team culture and psychological safety"
+      - "Difficult people situations and organizational politics"
+      - "Scaling yourself and organizational design"
+      - "Executive presence and strategic thinking"
+      - "Interview mastery for leadership roles"
+    
+    cross_references:
+      detection_engineering: "Chapter 2.4 - Detection Engineering team structure"
+      threat_intelligence: "Chapter 2.5 - Threat Intelligence team composition"
+      cloud_security: "Chapter 2.6 - Cloud Security team scaling"
+      iam_at_scale: "Chapter 3.1 - Identity team organizational models"
+      security_automation: "Chapter 4.1 - Automation team building"
+      incident_response: "Chapter 4.3 - IR team structure and incident command"
+    
+    does_not_cover:
+      - "CISO-specific responsibilities (see Chapter 5.2)"
+      - "Security governance frameworks (see Chapter 5.3)"
+      - "Specific company interview processes (generic only)"
+      - "Legal aspects of employment law (consult HR/legal)"
+      - "Budget management processes (see Chapter 5.2)"
+  
+  audience:
+    primary: "Security managers and directors leading teams of 3-50 engineers"
+    secondary: "Individual contributors preparing for management roles"
+    assumes_experience:
+      - "5+ years in security engineering or operations"
+      - "Strong technical foundation in at least one security domain"
+      - "Desire to lead people and build teams"
+
+# ============================================================================
+# CHAPTER 5.1 SECTION INDEX
+# Total Sections: 35
+# Estimated Total Pages: 180-200
+# ============================================================================
+
+sections:
+  
+  # --------------------------------------------------------------------------
+  # PART 1: BUILDING TEAMS FROM ZERO (Sections 01-09, ~60 pages)
+  # --------------------------------------------------------------------------
+  
+  part_1_building_teams:
+    section_01:
+      file: "section_5_1_01_hire_for_trajectory.yaml"
+      title: "Hire for Trajectory Not Resume"
+      pages: 6
+      topics:
+        - "Learning velocity and self-awareness"
+        - "Problem-solving and technical depth"
+        - "Red flags to avoid"
+        - "Comparison examples"
+    
+    section_02:
+      file: "section_5_1_02_cognitive_diversity.yaml"
+      title: "Cognitive Diversity Beats Homogeneity"
+      pages: 7
+      topics:
+        - "Why diversity matters"
+        - "Technical and career path diversity"
+        - "Homogeneous vs diverse team examples"
+        - "Hiring implications"
+    
+    section_03:
+      file: "section_5_1_03_team_size_topology.yaml"
+      title: "Team Size and Topology"
+      pages: 8
+      topics:
+        - "Teams of 3-5, 6-10, 11-15, 16+"
+        - "Communication overhead at each size"
+        - "Feature vs platform vs matrix teams"
+    
+    section_04:
+      file: "section_5_1_04_detection_team_composition.yaml"
+      title: "Detection Engineering Team Composition"
+      pages: 7
+      topics:
+        - "Core roles and levels"
+        - "4-phase evolution (founding to industry-leading)"
+        - "When to add specialized roles"
+    
+    section_05:
+      file: "section_5_1_05_incident_response_team.yaml"
+      title: "Incident Response Team Composition"
+      pages: 6
+      topics:
+        - "IR roles and topology"
+        - "Follow-the-sun vs on-call"
+        - "Severity framework"
+    
+    section_06:
+      file: "section_5_1_06_interview_process.yaml"
+      title: "Interview Process Design"
+      pages: 8
+      topics:
+        - "5-6 stage process"
+        - "Technical depth and breadth interviews"
+        - "Behavioral and values interviews"
+    
+    section_07:
+      file: "section_5_1_07_interview_evaluation.yaml"
+      title: "Interview Evaluation and Debrief"
+      pages: 6
+      topics:
+        - "Taking effective notes"
+        - "Writing feedback"
+        - "Debrief process and reducing bias"
+    
+    section_08:
+      file: "section_5_1_08_making_offers.yaml"
+      title: "Making Offers and Negotiation"
+      pages: 7
+      topics:
+        - "Compensation strategy"
+        - "Negotiation tactics"
+        - "Closing candidates"
+    
+    section_09:
+      file: "section_5_1_09_onboarding_excellence.yaml"
+      title: "Onboarding Excellence"
+      pages: 7
+      topics:
+        - "Pre-day-one through 90 days"
+        - "Day one hour-by-hour"
+        - "30/60/90 day checkpoints"
+  
+  # --------------------------------------------------------------------------
+  # PART 2: MANAGER OPERATING SYSTEM (Sections 10-17, ~55 pages)
+  # --------------------------------------------------------------------------
+  
+  part_2_manager_os:
+    section_10:
+      file: "section_5_1_10_one_on_ones.yaml"
+      title: "One-on-Ones Mastery"
+      pages: 7
+      topics:
+        - "Structure and cadence"
+        - "Difficult conversations"
+        - "Skip-level 1-on-1s"
+    
+    section_11:
+      file: "section_5_1_11_performance_reviews.yaml"
+      title: "Performance Management"
+      pages: 8
+      topics:
+        - "Review cycle"
+        - "Goal setting (SMART framework)"
+        - "Rating scales and calibration"
+    
+    section_12:
+      file: "section_5_1_12_feedback_culture.yaml"
+      title: "Feedback Culture"
+      pages: 6
+      topics:
+        - "Continuous feedback"
+        - "Radical candor framework"
+        - "Receiving feedback"
+    
+    section_13:
+      file: "section_5_1_13_career_development.yaml"
+      title: "Career Development"
+      pages: 7
+      topics:
+        - "Career ladders (IC and management)"
+        - "IC vs management decision"
+        - "Growth mechanisms"
+    
+    section_14:
+      file: "section_5_1_14_delegation_mastery.yaml"
+      title: "Delegation Mastery"
+      pages: 6
+      topics:
+        - "Why managers fail to delegate"
+        - "What and how to delegate"
+        - "Delegation matrix"
+    
+    section_15:
+      file: "section_5_1_15_team_meetings.yaml"
+      title: "Running Effective Team Meetings"
+      pages: 6
+      topics:
+        - "Weekly team meetings"
+        - "Planning and retrospectives"
+        - "All-hands and demos"
+    
+    section_16:
+      file: "section_5_1_16_remote_distributed.yaml"
+      title: "Remote and Distributed Teams"
+      pages: 7
+      topics:
+        - "Remote advantages and challenges"
+        - "Timezone management"
+        - "Async communication"
+    
+    section_17:
+      file: "section_5_1_17_work_life_balance.yaml"
+      title: "Work-Life Balance and Burnout"
+      pages: 6
+      topics:
+        - "Preventing burnout"
+        - "On-call sustainability"
+        - "Setting boundaries"
+  
+  # --------------------------------------------------------------------------
+  # PART 3: STAKEHOLDER MANAGEMENT (Sections 18-21, ~28 pages)
+  # --------------------------------------------------------------------------
+  
+  part_3_stakeholders:
+    section_18:
+      file: "section_5_1_18_executive_communication.yaml"
+      title: "Executive Communication"
+      pages: 7
+      topics:
+        - "Understanding executive audiences"
+        - "Risk communication"
+        - "Asking for resources"
+    
+    section_19:
+      file: "section_5_1_19_engineering_partnerships.yaml"
+      title: "Engineering Partnerships"
+      pages: 7
+      topics:
+        - "Security as enabler"
+        - "Building security tools"
+        - "Security champions program"
+    
+    section_20:
+      file: "section_5_1_20_cross_functional.yaml"
+      title: "Cross-Functional Collaboration"
+      pages: 7
+      topics:
+        - "Incident response coordination"
+        - "Product security partnership"
+        - "Navigating conflicts"
+    
+    section_21:
+      file: "section_5_1_21_saying_no.yaml"
+      title: "Saying No Effectively"
+      pages: 7
+      topics:
+        - "When and how to say no"
+        - "Providing alternatives"
+        - "Managing expectations"
+  
+  # --------------------------------------------------------------------------
+  # PART 4: TECHNICAL ROADMAP (Sections 22-24, ~21 pages)
+  # --------------------------------------------------------------------------
+  
+  part_4_roadmap:
+    section_22:
+      file: "section_5_1_22_roadmap_development.yaml"
+      title: "Roadmap Development"
+      pages: 7
+      topics:
+        - "Gathering input"
+        - "Prioritization frameworks (RICE)"
+        - "Balancing keep-lights-on vs planned"
+    
+    section_23:
+      file: "section_5_1_23_roadmap_communication.yaml"
+      title: "Roadmap Communication"
+      pages: 7
+      topics:
+        - "Roadmap artifacts"
+        - "Managing scope creep"
+        - "Quarterly planning"
+    
+    section_24:
+      file: "section_5_1_24_measuring_success.yaml"
+      title: "Measuring Success"
+      pages: 7
+      topics:
+        - "Team metrics"
+        - "Individual metrics"
+        - "Avoiding vanity metrics"
+  
+  # --------------------------------------------------------------------------
+  # PART 5: CRISIS LEADERSHIP (Sections 25-27, ~21 pages)
+  # --------------------------------------------------------------------------
+  
+  part_5_crisis:
+    section_25:
+      file: "section_5_1_25_incident_command.yaml"
+      title: "Incident Command"
+      pages: 7
+      topics:
+        - "IC role and responsibilities"
+        - "Incident command system"
+        - "Crisis decision-making"
+    
+    section_26:
+      file: "section_5_1_26_managing_team_crisis.yaml"
+      title: "Managing Team During Crisis"
+      pages: 7
+      topics:
+        - "Stress management"
+        - "Maintaining morale"
+        - "Communication under pressure"
+    
+    section_27:
+      file: "section_5_1_27_post_incident.yaml"
+      title: "Post-Incident Process"
+      pages: 7
+      topics:
+        - "Blameless postmortems"
+        - "Learning culture"
+        - "Continuous improvement"
+  
+  # --------------------------------------------------------------------------
+  # PART 6: DIFFICULT SITUATIONS (Sections 28-31, ~28 pages)
+  # --------------------------------------------------------------------------
+  
+  part_6_difficult:
+    section_28:
+      file: "section_5_1_28_underperformer_management.yaml"
+      title: "Underperformer Management"
+      pages: 7
+      topics:
+        - "Identifying underperformance"
+        - "PIP structure"
+        - "Termination process"
+    
+    section_29:
+      file: "section_5_1_29_brilliant_jerk.yaml"
+      title: "The Brilliant Jerk Problem"
+      pages: 7
+      topics:
+        - "Identifying the brilliant jerk"
+        - "4-step addressing process"
+        - "When to let them go"
+    
+    section_30:
+      file: "section_5_1_30_managing_up.yaml"
+      title: "Managing Up"
+      pages: 7
+      topics:
+        - "Understanding your manager"
+        - "Different manager types"
+        - "Getting what you need"
+    
+    section_31:
+      file: "section_5_1_31_organizational_politics.yaml"
+      title: "Organizational Politics"
+      pages: 7
+      topics:
+        - "Power dynamics"
+        - "Building influence"
+        - "Navigating conflicts"
+  
+  # --------------------------------------------------------------------------
+  # PART 7: EXECUTIVE PRESENCE (Sections 32-33, ~14 pages)
+  # --------------------------------------------------------------------------
+  
+  part_7_executive:
+    section_32:
+      file: "section_5_1_32_executive_presence.yaml"
+      title: "Executive Presence"
+      pages: 7
+      topics:
+        - "What it is and why it matters"
+        - "Communication mastery"
+        - "Presence in meetings"
+    
+    section_33:
+      file: "section_5_1_33_strategic_thinking.yaml"
+      title: "Strategic Thinking"
+      pages: 7
+      topics:
+        - "Short-term vs long-term"
+        - "Systems thinking"
+        - "Strategic planning"
+  
+  # --------------------------------------------------------------------------
+  # PART 8: INTERVIEW MASTERY (Sections 34-35, ~14 pages)
+  # --------------------------------------------------------------------------
+  
+  part_8_interviews:
+    section_34:
+      file: "section_5_1_34_behavioral_interviews.yaml"
+      title: "Behavioral Interview Mastery"
+      pages: 7
+      topics:
+        - "STAR method deep dive"
+        - "15+ common questions with answers"
+        - "Technical deep dives for managers"
+    
+    section_35:
+      file: "section_5_1_35_negotiation_strategy.yaml"
+      title: "Offer Negotiation Strategy"
+      pages: 7
+      topics:
+        - "Market rates by level"
+        - "Negotiation tactics"
+        - "Questions to ask them"
+
+# ============================================================================
+# COMPLETION SUMMARY
+# ============================================================================
+
+completion:
+  total_sections: 35
+  estimated_total_pages: "190-200"
+  estimated_total_words: "95,000-100,000"
+  
+  progress_tracking:
+    part_1_building_teams: "Sections 01-09 (9 sections)"
+    part_2_manager_os: "Sections 10-17 (8 sections)"
+    part_3_stakeholders: "Sections 18-21 (4 sections)"
+    part_4_roadmap: "Sections 22-24 (3 sections)"
+    part_5_crisis: "Sections 25-27 (3 sections)"
+    part_6_difficult: "Sections 28-31 (4 sections)"
+    part_7_executive: "Sections 32-33 (2 sections)"
+    part_8_interviews: "Sections 34-35 (2 sections)"
+  
+  usage_guide: |
+    Each section is self-contained and can be written in a single chat response.
+    Sections are designed to be stitched together in numerical order.
+    Each section is valid YAML with consistent indentation.
+    
+    To build the complete chapter:
+    1. Save this index as chapter_5_1_index.yaml
+    2. Generate each section file in order
+    3. Concatenate all section files
+    4. Result is complete Chapter 5.1
+
+---
