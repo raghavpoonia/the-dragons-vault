@@ -1,0 +1,483 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "05"
+  title: "Incident Response Team Composition"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 6
+
+# ============================================================================
+# SECTION 05: INCIDENT RESPONSE TEAM COMPOSITION
+# ============================================================================
+
+incident_response_team_composition:
+  
+  mission: "Respond to security incidents with speed and precision, minimize damage, and learn from every incident"
+  
+  cross_reference: |
+    For detailed incident response processes, see Chapter 4.3 - Incident Response.
+    This section focuses on team structure, roles, and topology.
+  
+  # --------------------------------------------------------------------------
+  # Core Roles
+  # --------------------------------------------------------------------------
+  
+  core_roles:
+    
+    incident_responder:
+      primary_responsibilities:
+        - "Triage incoming security alerts and determine severity"
+        - "Investigate potential security incidents"
+        - "Contain and remediate threats"
+        - "Document incidents and write postmortems"
+        - "Participate in on-call rotation"
+      
+      secondary_responsibilities:
+        - "Improve runbooks based on incident learnings"
+        - "Conduct purple team exercises"
+        - "Train SOC analysts on investigation techniques"
+        - "Collaborate with detection engineering on alert quality"
+      
+      levels:
+        
+        analyst_l3:
+          experience: "0-2 years in incident response"
+          
+          expectations:
+            - "Handles Tier 1-2 incidents independently (phishing, malware, policy violations)"
+            - "Escalates Tier 3 incidents appropriately with good context"
+            - "Documents all actions taken during investigation"
+            - "Participates in on-call rotation with backup support"
+            - "Follows runbooks accurately"
+          
+          skill_focus:
+            - "Log analysis and correlation"
+            - "Basic forensics (file analysis, registry, event logs)"
+            - "Incident documentation and communication"
+            - "Understanding attack patterns"
+          
+          growth_path: "L4 in 12-24 months with consistent incident handling"
+          
+          compensation_range: "$85K-$120K base depending on market"
+        
+        senior_responder_l4_l5:
+          experience: "3-6 years in incident response"
+          
+          expectations:
+            - "Handles all tiers of incidents independently"
+            - "Leads incident response for major incidents (ransomware, breaches)"
+            - "Mentors junior responders"
+            - "Conducts blameless postmortems"
+            - "Improves IR processes and runbooks based on experience"
+            - "Performs threat hunting to find incidents proactively"
+          
+          skill_focus:
+            - "Advanced forensics (memory analysis, malware triage)"
+            - "Incident command and coordination"
+            - "Root cause analysis"
+            - "Communication under pressure (execs, customers)"
+          
+          growth_path: "L6 (staff) in 3-5 years with org-wide impact"
+          
+          compensation_range: "$140K-$190K base"
+        
+        staff_responder_l6:
+          experience: "7+ years, incident response expert"
+          
+          expectations:
+            - "Incident commander for major breaches"
+            - "Designs IR processes and workflows"
+            - "Leads purple team exercises"
+            - "Represents IR in executive meetings"
+            - "Mentors senior responders"
+            - "Drives org-wide security improvements from incident learnings"
+          
+          skill_focus:
+            - "Strategic incident response planning"
+            - "Cross-functional leadership"
+            - "Executive communication"
+            - "Building IR programs"
+          
+          compensation_range: "$200K-$260K base"
+    
+    threat_hunter:
+      when_needed: "Team of 5+ responders, or proactive security posture is priority"
+      
+      background: "Incident response experience + offensive security knowledge"
+      
+      responsibilities:
+        - "Proactively hunt for threats in environment (not waiting for alerts)"
+        - "Develop hunting hypotheses from threat intelligence"
+        - "Identify gaps in detection coverage through hunting"
+        - "Test detection effectiveness by simulating attacks"
+        - "Document hunting methodologies and findings"
+      
+      value_proposition: "Find threats before they find you. Catch sophisticated attackers that evade detections."
+      
+      cost_benefit_analysis:
+        cost: "$150K-$220K for experienced hunter"
+        benefit: "Find 2-5 incidents per quarter that detections missed, improve detection coverage"
+        when_justified: "After basic IR capability established, have SOC capacity, want proactive posture"
+      
+      compensation_range: "$150K-$220K base depending on experience"
+    
+    forensics_specialist:
+      when_needed: "Regulated industry requiring detailed forensics, or frequent sophisticated attacks"
+      
+      background: "Digital forensics + malware analysis"
+      
+      responsibilities:
+        - "Deep forensic analysis of compromised systems"
+        - "Malware reverse engineering"
+        - "Timeline reconstruction for complex incidents"
+        - "Expert witness testimony (if legal action required)"
+        - "Forensic evidence preservation and chain of custody"
+      
+      value_proposition: "Deep technical analysis for complex incidents, legal defensibility"
+      
+      cost_benefit_analysis:
+        cost: "$180K-$280K for experienced forensics specialist"
+        benefit: "Detailed analysis for sophisticated attacks, legal defensibility, faster root cause analysis"
+        when_justified: "Regulated industry, litigation risk, nation-state adversaries, frequent complex incidents"
+      
+      compensation_range: "$180K-$280K base depending on experience"
+  
+  # --------------------------------------------------------------------------
+  # Team Topology Options
+  # --------------------------------------------------------------------------
+  
+  team_topology_options:
+    
+    follow_the_sun:
+      definition: "Multiple IR teams across timezones for 24/7 coverage without on-call"
+      
+      when_to_use: "Global company, can't rely on on-call alone, budget for 10-15+ IR headcount"
+      
+      structure:
+        americas_team:
+          location: "US East or West Coast"
+          coverage: "8 AM - 8 PM local time"
+          team_size: "3-5 responders"
+        
+        emea_team:
+          location: "Europe (London, Dublin, Amsterdam)"
+          coverage: "8 AM - 8 PM local time"
+          team_size: "2-4 responders"
+        
+        apac_team:
+          location: "Singapore, Sydney, Tokyo"
+          coverage: "8 AM - 8 PM local time"
+          team_size: "2-3 responders"
+      
+      coordination_requirements:
+        handoff_process: "30-minute overlap for handoff between shifts"
+        shared_tools: "Same ticketing system, same SIEM, same runbooks"
+        communication: "Slack channel for handoffs, weekly all-hands for alignment"
+        documentation: "Extremely detailed - next shift needs full context"
+      
+      advantages:
+        - "True 24/7 coverage without on-call burnout"
+        - "Incidents handled during business hours for responders"
+        - "Local language/culture expertise for regions"
+        - "Better work-life balance for team"
+      
+      challenges:
+        - "Requires 10-15 IR headcount minimum (expensive)"
+        - "Complex coordination across timezones"
+        - "Inconsistent processes if not carefully managed"
+        - "Hiring in multiple regions simultaneously"
+      
+      success_factors:
+        - "Strong documentation culture"
+        - "Regular cross-region syncs and relationship building"
+        - "Standardized processes and runbooks"
+        - "Clear escalation paths for major incidents"
+    
+    on_call_rotation:
+      definition: "Single team with rotating on-call responsibility"
+      
+      when_to_use: "Most companies <5000 employees, budget for 3-8 IR headcount"
+      
+      structure:
+        primary_on_call: "Handles all incidents first"
+        secondary_on_call: "Backup if primary unavailable or needs help"
+        manager_escalation: "For major incidents or difficult decisions"
+      
+      rotation_schedule:
+        weekly_rotation:
+          pattern: "Most common - 1 week on-call, 3-4 weeks off"
+          example_4_person_team:
+            week_1: "Alice primary, Bob secondary"
+            week_2: "Bob primary, Carol secondary"
+            week_3: "Carol primary, Dave secondary"
+            week_4: "Dave primary, Alice secondary"
+        
+        daily_rotation:
+          pattern: "Only for very large teams (8+ responders)"
+          benefit: "Less burnout, shorter commitment"
+          challenge: "More handoffs, context switching"
+      
+      sustainability_requirements:
+        compensation: "On-call pay ($1000-2000/week extra) or time-in-lieu"
+        time_off_after_incidents: "1 day off per weekend incident handled"
+        escalation_criteria: "Clear criteria - don't wake people for minor alerts"
+        page_volume_limit: "If >10 pages per week, fix the alerts causing pages"
+      
+      burnout_prevention:
+        - "No one on-call >25% of weeks"
+        - "Mandatory break after handling major incident"
+        - "Regular rotation review and adjustment"
+        - "Invest heavily in reducing false positive alerts"
+      
+      advantages:
+        - "Works with smaller team (3-8 people)"
+        - "Simpler coordination"
+        - "Lower cost than follow-the-sun"
+      
+      challenges:
+        - "On-call burnout risk if not managed carefully"
+        - "Work-life balance challenges"
+        - "Delayed response outside business hours possible"
+    
+    embedded_responders:
+      definition: "IR person embedded in product teams"
+      
+      when_to_use: "Large companies (1000+ employees) with dedicated security per product"
+      
+      structure:
+        - "Responder sits with product team"
+        - "Handles security incidents for that product area"
+        - "Reports to central IR manager (dotted line to product manager)"
+      
+      advantages:
+        - "Deep product knowledge"
+        - "Faster response (no handoff delays)"
+        - "Security integrated early in development"
+      
+      challenges:
+        - "Can become siloed from other responders"
+        - "Career development harder (isolated from peers)"
+        - "Duplicate effort across teams"
+        - "May prioritize product team over security team"
+      
+      when_it_works: "100+ person security team with clear mandates and strong central coordination"
+      
+      dragons_advice: "Works well at Google/Meta scale. For most companies, centralized IR team is better."
+  
+  # --------------------------------------------------------------------------
+  # Incident Severity Framework
+  # --------------------------------------------------------------------------
+  
+  incident_severity_framework:
+    
+    purpose: "Clear, shared understanding of incident severity drives appropriate response"
+    
+    sev_0_critical:
+      definition: "Active breach, data exfiltration, or complete service outage"
+      
+      examples:
+        - "Ransomware spreading across environment"
+        - "Confirmed data breach with customer PII accessed"
+        - "Attacker with admin access actively operating"
+        - "Complete compromise of critical system"
+      
+      response_requirements:
+        response_time: "15 minutes to acknowledgement"
+        escalation: "Immediate - page everyone, wake up executives"
+        incident_commander: "Senior responder or manager"
+        communication: "Hourly updates to executive team"
+        all_hands: "Potentially - depending on scope"
+      
+      expected_frequency: "0-2 per year (if more, you have serious problems)"
+    
+    sev_1_high:
+      definition: "Significant security incident, potential for major impact"
+      
+      examples:
+        - "Compromised production server"
+        - "Malware detected on multiple systems"
+        - "Suspected unauthorized access to sensitive data"
+        - "Successful phishing attack affecting executives"
+      
+      response_requirements:
+        response_time: "30 minutes to acknowledgement"
+        escalation: "Page on-call, notify manager"
+        incident_commander: "Senior responder"
+        communication: "Daily updates to leadership"
+      
+      expected_frequency: "1-2 per month"
+    
+    sev_2_medium:
+      definition: "Security incident requiring investigation"
+      
+      examples:
+        - "Suspicious authentication activity"
+        - "Potential phishing attack"
+        - "Policy violation requiring investigation"
+        - "Malware detected on single system"
+      
+      response_requirements:
+        response_time: "2 hours to acknowledgement"
+        escalation: "On-call handles, brief manager later"
+        communication: "Update in weekly report"
+      
+      expected_frequency: "2-5 per week"
+    
+    sev_3_low:
+      definition: "Security event requiring review but no immediate threat"
+      
+      examples:
+        - "Failed login attempts (automated brute force)"
+        - "Minor policy violations"
+        - "Informational alerts from SIEM"
+        - "User accidentally accessed wrong data"
+      
+      response_requirements:
+        response_time: "Next business day"
+        escalation: "Queue for analyst review"
+        communication: "Tracked in metrics only"
+      
+      expected_frequency: "10-50 per day"
+  
+  # --------------------------------------------------------------------------
+  # Evolution Roadmap
+  # --------------------------------------------------------------------------
+  
+  evolution_roadmap:
+    
+    months_0_to_6_reactive:
+      team_size: "1-2 responders"
+      
+      capabilities:
+        - "Respond to incidents during business hours"
+        - "Basic triage and containment"
+        - "Document incidents in ticketing system"
+        - "Work with IT for remediation"
+      
+      gaps:
+        - "No 24/7 coverage (incidents wait until business hours)"
+        - "No proactive hunting"
+        - "Limited forensics capability"
+        - "Slow response time (hours, not minutes)"
+      
+      immediate_priorities:
+        - "Establish on-call rotation (even if just 2 people)"
+        - "Create incident response runbooks for common scenarios"
+        - "Define severity framework"
+        - "Build relationship with SOC for alert quality"
+      
+      success_metrics:
+        - "All incidents documented"
+        - "Mean time to acknowledge <2 hours"
+        - "Runbooks for top 5 incident types"
+    
+    months_6_to_18_structured:
+      team_size: "3-5 responders"
+      
+      capabilities:
+        - "24/7 on-call coverage"
+        - "Structured incident response process"
+        - "Blameless postmortems"
+        - "Incident metrics and reporting"
+        - "Basic threat hunting (ad-hoc)"
+      
+      gaps:
+        - "Mostly reactive - some incidents still missed"
+        - "Basic forensics only (no deep malware analysis)"
+        - "Limited automation"
+      
+      next_steps:
+        - "Add threat hunting capability (dedicated hunter or 20% time for responders)"
+        - "Improve detection coverage based on incident learnings"
+        - "Invest in forensics tools and training"
+        - "Build incident response automation (containment playbooks)"
+      
+      success_metrics:
+        - "Mean time to acknowledge <30 minutes"
+        - "All Sev 1+ incidents have postmortems"
+        - "5+ process improvements per quarter from incident learnings"
+    
+    months_18_to_36_proactive:
+      team_size: "6-10 responders"
+      
+      capabilities:
+        - "Proactive threat hunting finds incidents before alerts"
+        - "Advanced forensics for complex investigations"
+        - "Automated playbooks for common incidents"
+        - "Purple team exercises for validation"
+        - "Dedicated on-call with sustainable rotation"
+      
+      gaps:
+        - "Single timezone coverage with on-call (not true 24/7)"
+        - "Some manual processes remain"
+      
+      next_steps:
+        - "Consider follow-the-sun if global company and budget allows"
+        - "Build SOAR platform for automation"
+        - "Add forensics specialist if complex incidents frequent"
+      
+      success_metrics:
+        - "Mean time to acknowledge <15 minutes"
+        - "30% of incidents found through hunting (proactive)"
+        - "80% of Sev 2 incidents handled via automated playbooks"
+    
+    months_36_plus_optimized:
+      team_size: "10-15 responders (or split into follow-the-sun)"
+      
+      capabilities:
+        - "World-class incident response"
+        - "Proactive threat hunting as core capability"
+        - "Advanced forensics and malware analysis"
+        - "Published incident response methodologies"
+        - "True 24/7 coverage (follow-the-sun or well-managed on-call)"
+      
+      at_this_level: "Industry-leading IR capability, other companies learn from you"
+  
+  # --------------------------------------------------------------------------
+  # Hiring Priorities
+  # --------------------------------------------------------------------------
+  
+  hiring_priorities:
+    
+    first_hire:
+      role: "Senior Incident Responder"
+      rationale: "Need someone who can handle incidents independently while you build team"
+      background: "SOC analyst with 3+ years, or junior responder with strong potential"
+    
+    second_third_hires:
+      role: "Mid-level Responders"
+      rationale: "Build sustainable on-call rotation (need minimum 3 people)"
+      diversity: "Mix of backgrounds - one with forensics, one with malware, one with cloud"
+    
+    fourth_fifth_hires:
+      options:
+        option_1: "Threat Hunter (if want proactive capability)"
+        option_2: "More responders (if incident volume high)"
+      decision_criteria: "If handling >10 incidents/week, hire responders. If want to find incidents proactively, hire hunter."
+    
+    sixth_plus_hires:
+      considerations:
+        - "Add forensics specialist if complex incidents frequent"
+        - "Add junior responders for career development pipeline"
+        - "Consider follow-the-sun if global"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "IR team roles: Incident Responders (L3-L6), optional Threat Hunters, optional Forensics Specialists"
+    - "Three topology options: Follow-the-sun (10-15 people), On-call rotation (3-8 people), Embedded (100+ company)"
+    - "Most companies should use on-call rotation - it's sustainable with proper compensation and rotation"
+    - "Severity framework critical: Sev 0 (breach), Sev 1 (significant), Sev 2 (medium), Sev 3 (low)"
+    - "Evolution: Reactive (1-2 people, 0-6 months) → Structured (3-5, 6-18 months) → Proactive (6-10, 18-36 months)"
+    - "First hire: Senior responder who can operate independently"
+    - "Need minimum 3 people for sustainable on-call rotation"
+    - "Add threat hunter at 5+ people if want proactive capability"
+    - "Add forensics specialist only if justified by complex incidents or regulatory requirements"
+    - "On-call sustainability requires: compensation, time off after incidents, page volume limits"
+
+---
