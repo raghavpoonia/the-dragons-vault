@@ -1,0 +1,530 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "06"
+  title: "Interview Process Design"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 8
+
+# ============================================================================
+# SECTION 06: INTERVIEW PROCESS DESIGN
+# ============================================================================
+
+interview_process_design:
+  
+  philosophy: |
+    Your interview process is a signal about your team. A sloppy, inconsistent process 
+    signals dysfunction. A thoughtful, rigorous process signals excellence. Strong 
+    candidates are interviewing you as much as you're interviewing them.
+    
+    The goal is to evaluate candidates fairly while selling them on the opportunity. 
+    You're looking for signal on: technical ability, learning trajectory, collaboration, 
+    communication, and values alignment.
+  
+  # --------------------------------------------------------------------------
+  # Five to Six Stage Process
+  # --------------------------------------------------------------------------
+  
+  five_to_six_stage_process:
+    
+    stage_1_recruiter_screen:
+      duration: "30 minutes"
+      interviewer: "Recruiter or recruiting coordinator"
+      timing: "Within 3-5 days of application"
+      
+      purpose: "Basic qualification, logistics, compensation alignment"
+      
+      recruiter_evaluates:
+        - "Resume matches job requirements (years of experience, skills, domain)"
+        - "Candidate interested in role and company (not just applying everywhere)"
+        - "Compensation expectations realistic for level and market"
+        - "Can work in required location/timezone"
+        - "Eligible to work (visa status, etc)"
+      
+      red_flags_to_filter:
+        - "Compensation expectations 50%+ above budget (won't close)"
+        - "Can't start for 6+ months (will accept another offer first)"
+        - "Wants remote but role is on-site (or vice versa)"
+        - "Seems disinterested or applying to hundreds of jobs"
+      
+      what_recruiter_shares:
+        - "Role overview (2-3 sentences on what team does)"
+        - "Team structure and mission"
+        - "Interview process and timeline (set expectations)"
+        - "Compensation range (if legally required or company policy)"
+      
+      outcome: "Pass to hiring manager screen (60-70%) or polite rejection"
+      
+      common_mistakes:
+        - "Recruiter doesn't understand technical requirements - passes unqualified candidates"
+        - "No compensation discussion - waste everyone's time if misaligned"
+        - "Takes too long to schedule - strong candidates accept other offers"
+      
+      best_practice: "Train recruiters on technical requirements. Share example resumes of good vs bad fits."
+    
+    stage_2_hiring_manager_screen:
+      duration: "30-45 minutes"
+      interviewer: "You (the hiring manager)"
+      timing: "Within 5-7 days of recruiter screen"
+      
+      purpose: "Evaluate trajectory, assess cultural fit, build rapport, sell the role"
+      
+      structure:
+        minutes_0_to_10_sell_the_role:
+          why_important: "Candidates are interviewing you too. Start by exciting them."
+          
+          what_to_cover:
+            - "Why you're excited about the team's mission"
+            - "Interesting problems you're working on (be specific)"
+            - "Growth opportunities for this role"
+            - "Your management philosophy (briefly - 2 sentences)"
+          
+          example_pitch: |
+            "We're building detection capabilities from scratch. In 12 months, we've gone 
+            from 0 to 150 detections covering 70% of MITRE ATT&CK. The challenge is 
+            scaling to 500+ while maintaining quality. You'd own cloud detection strategy 
+            - AWS, Azure, GCP. We're also building detection-as-code platform. If you join, 
+            you'll have significant autonomy and impact. I believe in growing people - 3 of 
+            my team have been promoted in last 18 months."
+        
+        minutes_10_to_35_evaluate_candidate:
+          assess_trajectory:
+            what_to_evaluate:
+              - "Learning velocity - how fast do they pick up new things?"
+              - "Career progression - upward trend or plateaued?"
+              - "Self-awareness - do they know strengths and gaps?"
+              - "Motivation - why security? why this role?"
+            
+            questions_to_ask:
+              career_trajectory:
+                - "Walk me through your career progression. What drove each move?"
+                - "What's something complex you learned in the last 6 months? How did you learn it?"
+                - "What's an area where you know you need to grow?"
+              
+              motivation:
+                - "Why security? What got you interested in this field?"
+                - "What kind of work energizes you? What drains you?"
+                - "What are you looking for in your next role that you don't have now?"
+              
+              problem_solving:
+                - "Tell me about a complex security problem you solved. Walk me through your approach."
+                - "Tell me about a time you were wrong about something technical. What did you learn?"
+          
+          assess_communication:
+            importance: "Communication issues cause 80% of team problems"
+            
+            what_to_evaluate:
+              - "Can they explain technical concepts simply?"
+              - "Do they listen or just wait to talk?"
+              - "Are they defensive when challenged?"
+              - "Can they admit when they don't know something?"
+            
+            technique: "Ask them to explain a complex topic, then ask clarifying questions that probe understanding"
+          
+          assess_values_alignment:
+            what_to_evaluate:
+              - "Do they value learning and growth?"
+              - "Are they comfortable with ambiguity?"
+              - "Do they take ownership or blame externals?"
+              - "Are they collaborative or lone wolf?"
+            
+            questions:
+              - "Tell me about a project that failed. What happened? What did you learn?"
+              - "Tell me about a time you disagreed with your manager. How did you handle it?"
+              - "What's your ideal team environment?"
+        
+        minutes_35_to_45_their_questions:
+          importance: "Quality of questions tells you a lot about candidate"
+          
+          good_questions_indicate:
+            - "Genuine interest in role and company"
+            - "Strategic thinking about career"
+            - "Desire to understand context and challenges"
+          
+          bad_questions_indicate:
+            - "Only asking about compensation/benefits - money focused only"
+            - "No questions at all - not curious or already decided"
+            - "Questions easily answered by website - didn't prepare"
+      
+      common_hiring_manager_mistakes:
+        talking_too_much:
+          problem: "You spend 40 minutes selling, 5 minutes evaluating"
+          fix: "Sell for 10 minutes, evaluate for 30, leave 5 for questions. Be disciplined."
+        
+        not_taking_notes:
+          problem: "You forget details, can't write good debrief feedback"
+          fix: "Take notes during interview. Tell candidate why: 'I take notes to remember details for team discussion.'"
+        
+        being_too_friendly:
+          problem: "You want them to like you, so you don't probe into concerns"
+          fix: "Your job is to evaluate, not to be liked. Ask hard questions professionally."
+        
+        ignoring_red_flags:
+          problem: "You're desperate to fill role, so you rationalize away concerns"
+          fix: "No hire is better than bad hire - ALWAYS. If you have concerns, explore them or reject."
+      
+      outcome: "Pass to technical interviews (50-60%) or polite rejection"
+      
+      rejection_criteria:
+        - "Poor communication - can't explain their work clearly"
+        - "No learning signal - hasn't grown in years"
+        - "Values misalignment - blames others, defensive, arrogant"
+        - "Low motivation - just wants any job, not this specific role"
+        - "Red flags - inconsistent stories, badmouthing previous employers excessively"
+    
+    stage_3_technical_depth_interview:
+      duration: "60 minutes"
+      interviewer: "Senior engineer on your team"
+      timing: "Within 7-10 days of hiring manager screen"
+      
+      purpose: "Evaluate technical depth in security domain"
+      
+      format_options:
+        
+        option_1_technical_deep_dive:
+          structure: "Candidate walks through a complex project in detail, interviewer probes"
+          
+          time_allocation:
+            presentation: "15-20 minutes - candidate explains project"
+            deep_dive_questions: "40-45 minutes - interviewer asks probing questions"
+          
+          what_to_evaluate:
+            technical_depth:
+              - "Do they understand the system at multiple levels of abstraction?"
+              - "Can they explain trade-offs they made?"
+              - "Do they know WHY they made technical choices, not just what they did?"
+            
+            problem_solving:
+              - "How did they approach the problem initially?"
+              - "Did they consider alternatives?"
+              - "How did they handle constraints (time, resources, technical limitations)?"
+            
+            ownership:
+              - "Did they drive the project or just execute someone else's plan?"
+              - "How did they handle setbacks or failures?"
+              - "Did they think about downstream impact on other teams?"
+          
+          example_questions_for_detection_engineer:
+            - "Walk me through your detection for [specific MITRE technique]. Why did you choose that data source?"
+            - "What was your false positive rate? How did you get it that low? Walk me through your tuning process."
+            - "What would an attacker do to evade your detection? How would you improve it?"
+            - "If you could redesign this detection now with what you know, what would you change?"
+            - "How did you test this detection before deploying to production?"
+          
+          example_questions_for_incident_responder:
+            - "Walk me through your most complex incident investigation. What made it complex?"
+            - "What forensic artifacts were key? Why those specifically?"
+            - "How did you determine scope of compromise? What methodology?"
+            - "What would you have done differently knowing what you know now?"
+            - "What tools did you use? What were their limitations?"
+          
+          red_flags:
+            - "Surface-level understanding - can't explain 'why', only 'what'"
+            - "Can't answer alternatives - only knows one way to do things"
+            - "Blames others for failures - team didn't help, manager didn't support"
+            - "Doesn't know technical details of own project - might not have actually done it"
+        
+        option_2_live_coding_security_problem:
+          when_to_use: "For roles requiring significant coding (platform engineers, automation-heavy roles)"
+          
+          structure: "Candidate solves security problem with code while thinking aloud"
+          
+          time_allocation:
+            problem_explanation: "5 minutes"
+            coding: "40 minutes"
+            review_and_discussion: "15 minutes"
+          
+          example_problems:
+            detection_logic:
+              problem: "Write a detection for AWS IAM privilege escalation"
+              provides: "Sample CloudTrail logs, AWS IAM API documentation"
+              evaluates: "Logic correctness, edge cases considered, testing approach"
+            
+            log_parsing:
+              problem: "Parse and normalize logs from 3 different sources into common schema"
+              provides: "Sample logs in different formats (JSON, syslog, CSV)"
+              evaluates: "Code quality, error handling, efficiency, schema design"
+            
+            security_automation:
+              problem: "Write script to remediate misconfigured S3 buckets (public access)"
+              provides: "AWS SDK documentation, sample bucket configurations"
+              evaluates: "Safety checks (don't break production), error handling, automation thinking"
+          
+          what_to_evaluate:
+            code_quality: "Is code readable and maintainable? Appropriate variable names, functions?"
+            problem_solving: "Do they approach systematically or randomly try things?"
+            edge_case_handling: "Do they think about failure modes, invalid input, errors?"
+            communication: "Do they explain as they code? Can they articulate tradeoffs?"
+          
+          common_interviewer_mistakes:
+            too_hard: "Problem would take expert 2 hours - candidate can't finish"
+            too_easy: "Problem doesn't differentiate strong from weak candidates"
+            no_hints: "Let candidate struggle for 40 minutes silently - anxiety prevents clear thinking"
+            too_much_help: "Basically solve it for them - can't evaluate their skills"
+          
+          right_approach: |
+            Problem should be achievable in 30-40 minutes by competent candidate. Give hints 
+            if stuck >5 minutes on something not core to evaluation. Focus on thought process, 
+            not perfect solution. Working code with some bugs is fine - can discuss improvements.
+        
+        option_3_system_design:
+          when_to_use: "Senior+ roles (L5+), architecture-heavy positions, platform engineers"
+          
+          structure: "Design a security system on whiteboard (or virtual whiteboard)"
+          
+          duration: "60 minutes"
+          
+          example_prompts:
+            detection_platform:
+              prompt: "Design a detection-as-code platform for 50 security engineers writing detections"
+              evaluates: "Architecture, scale, developer experience, trade-offs, operational considerations"
+            
+            incident_response_system:
+              prompt: "Design an incident response system for 10,000 employee company"
+              evaluates: "Workflow design, tooling, automation, escalation, communication"
+            
+            cloud_security_prevention:
+              prompt: "Design a system to prevent public S3 buckets across 100 AWS accounts"
+              evaluates: "Prevention vs detection tradeoffs, scale, compliance, exception handling"
+          
+          evaluation_criteria:
+            requirements_gathering:
+              - "Do they ask clarifying questions before jumping to solution?"
+              - "Do they understand constraints (budget, time, team size, existing systems)?"
+              - "Do they identify key requirements vs nice-to-haves?"
+            
+            high_level_design:
+              - "Do they start with big picture before diving into details?"
+              - "Is the design coherent and well-structured?"
+              - "Do they explain their choices and reasoning?"
+            
+            deep_dive:
+              - "Can they go deep on specific components when asked?"
+              - "Do they understand trade-offs (performance vs simplicity, cost vs reliability)?"
+              - "Do they think about failure modes and edge cases?"
+            
+            communication:
+              - "Can they explain complex design simply?"
+              - "Do they use diagrams effectively?"
+              - "Do they check for understanding or just present?"
+      
+      outcome: "Pass to next technical interview (40-50%) or reject"
+      
+      calibration_importance:
+        problem: "Different interviewers have different standards for 'good enough'"
+        
+        solution: "Weekly calibration meetings to review borderline candidates"
+        
+        process:
+          - "Share interview notes before calibration meeting"
+          - "Discuss evaluation criteria - what does 'strong technical depth' actually mean?"
+          - "Review specific examples from recent interviews"
+          - "Align on what 'hire' vs 'no hire' looks like for this level"
+        
+        benefit: "Consistent bar across interviewers, fair evaluation for all candidates"
+    
+    stage_4_technical_breadth_interview:
+      duration: "60 minutes"
+      interviewer: "Different senior engineer from stage 3"
+      timing: "Same day as stage 3 or next day (batch interviews)"
+      
+      purpose: "Evaluate breadth of security knowledge and problem-solving across domains"
+      
+      format: "Security scenarios and problem-solving questions across multiple areas"
+      
+      example_questions_for_detection_engineer:
+        attacker_techniques:
+          - "How would you detect credential dumping (e.g., Mimikatz)? What data sources?"
+          - "An attacker has admin credentials. What would you look for in logs?"
+          - "Walk me through detecting data exfiltration. What are the challenges?"
+        
+        data_sources:
+          - "What logs would you need to detect lateral movement? What if you don't have endpoint logs?"
+          - "How would you handle 10TB of logs per day? What optimizations?"
+          - "What data source would you add if you could only add one? Why?"
+        
+        trade_offs:
+          - "Detection with 1% FP rate vs 10% FP rate but catches more attacks. Which and why?"
+          - "High-fidelity detections vs broad coverage - how do you balance?"
+        
+        learning_and_currency:
+          - "What security research or blogs do you follow?"
+          - "Tell me about a recent attack technique you learned about. How would you detect it?"
+      
+      example_questions_for_incident_responder:
+        investigation_scenarios:
+          - "You get alert for suspicious PowerShell execution. Walk me through investigation steps."
+          - "How do you determine if a compromised system accessed sensitive data?"
+          - "How would you investigate a suspected insider threat? What's different from external threat?"
+        
+        containment_decisions:
+          - "You find ransomware spreading. What do you do first? Why?"
+          - "How do you decide whether to contain immediately or monitor attacker to learn their tactics?"
+        
+        forensics_knowledge:
+          - "What forensic artifacts are most valuable for investigating credential theft?"
+          - "How would you handle a system with no EDR agent or logging?"
+        
+        communication:
+          - "How do you explain a breach to executives who aren't technical?"
+          - "Walk me through your incident communication process - who needs to know what when?"
+      
+      what_to_evaluate:
+        breadth: "Do they know security beyond their narrow specialty? Can they discuss multiple domains?"
+        problem_solving: "Can they break down complex scenarios systematically?"
+        practical_thinking: "Do they understand real-world constraints (budget, time, false positives)?"
+        learning: "Are they staying current with security trends and new attack techniques?"
+      
+      red_flags:
+        - "Narrow expertise - only knows one thing deeply, can't discuss anything else"
+        - "Textbook answers without practical experience - sounds like memorized from training"
+        - "Can't adapt knowledge to new scenarios - rigid thinking"
+        - "Not staying current - hasn't learned anything new recently, doesn't follow security news"
+      
+      outcome: "Pass to behavioral interview (30-40%) or reject"
+    
+    stage_5_behavioral_and_collaboration:
+      duration: "60 minutes"
+      interviewer: "You (hiring manager) or peer manager"
+      timing: "Same interview day or within 2-3 days"
+      
+      purpose: "Evaluate collaboration, communication, leadership potential, culture fit"
+      
+      format: "STAR method behavioral questions (Situation, Task, Action, Result)"
+      
+      question_categories:
+        
+        collaboration:
+          - "Tell me about a time you disagreed with a teammate. How did you handle it?"
+          - "Tell me about a time you had to work with a difficult person"
+          - "Tell me about a project that required coordination across multiple teams"
+        
+        ownership:
+          - "Tell me about a time you made a mistake. What happened? What did you learn?"
+          - "Tell me about a project that failed. What was your role? What would you do differently?"
+          - "Tell me about a time you had to make a decision without complete information"
+        
+        communication:
+          - "Tell me about a time you had to explain something technical to a non-technical audience"
+          - "Tell me about a time you had to deliver bad news to stakeholders"
+          - "Tell me about a time you convinced someone to change their mind"
+        
+        growth_mindset:
+          - "Tell me about a time you received critical feedback. How did you respond?"
+          - "Tell me about something you taught yourself outside of work requirements"
+          - "What's the hardest thing you've learned in your career?"
+        
+        leadership_potential:
+          - "Tell me about a time you mentored someone less experienced"
+          - "Tell me about a time you led a project without formal authority"
+          - "Tell me about a time you had to step up in a crisis"
+      
+      evaluation_criteria:
+        
+        quality_of_star_answers:
+          situation: "Do they set context clearly? Can you visualize the scenario?"
+          task: "Do they explain what needed to be done and why it mattered?"
+          action: "Do they focus on THEIR actions, not just 'we did'? Specific details?"
+          result: "Do they quantify impact? What actually happened?"
+        
+        self_awareness:
+          - "Do they understand their role in outcomes (good and bad)?"
+          - "Can they articulate what they learned from experiences?"
+          - "Do they take responsibility or blame others?"
+        
+        communication_quality:
+          - "Are answers concise and organized or rambling?"
+          - "Do they organize thoughts clearly with structure?"
+          - "Can they adjust based on your reactions and follow-up questions?"
+        
+        values_alignment:
+          - "Do examples demonstrate your team's values (learning, ownership, collaboration)?"
+          - "Are they comfortable with your culture (ambiguity, fast pace, autonomy)?"
+      
+      red_flags:
+        - "No concrete examples - vague generalities like 'I usually handle it this way'"
+        - "Takes credit for team's work - all 'I' no 'we' when clearly team effort"
+        - "Blames others consistently - every problem was someone else's fault"
+        - "Can't articulate learnings from failures - defensive or dismissive"
+        - "Defensive when probed for details - gets uncomfortable with follow-up questions"
+      
+      outcome: "Pass to final round (20-30%) or reject"
+    
+    stage_6_values_and_vision_final:
+      duration: "30-45 minutes"
+      interviewer: "Your manager (director/VP) or skip-level executive"
+      timing: "Same day as other final rounds or within 2-3 days"
+      
+      purpose: "Evaluate long-term fit, alignment with company values, close strong candidates"
+      
+      what_interviewer_evaluates:
+        
+        strategic_thinking:
+          - "Do they think beyond immediate role? Where do they see their career in 3-5 years?"
+          - "Do they understand business context? Connect technical work to business impact?"
+          - "Can they articulate long-term goals and how this role fits?"
+        
+        culture_fit_actually_values_fit:
+          - "Do they align with company values (be specific about your company's values)?"
+          - "Will they thrive in this environment (startup chaos vs big company process)?"
+          - "Will they contribute positively to culture or detract?"
+        
+        retention_likelihood:
+          - "Is this role actually what they want or settling?"
+          - "Are they likely to stay 2+ years?"
+          - "Will they grow here or hit ceiling quickly?"
+      
+      typical_questions:
+        - "Where do you see your career in 5 years? What does success look like?"
+        - "What kind of company culture do you thrive in? What drains you?"
+        - "What are you looking for that you're not getting in your current role?"
+        - "What questions do you have for me about the company, team, or role?"
+      
+      importance_of_candidate_questions:
+        concept: "Candidates who ask no questions are red flag - not curious or already decided"
+        
+        good_questions_indicate:
+          - "Genuine interest in role and company trajectory"
+          - "Strategic thinking about fit and growth"
+          - "Desire to understand context and challenges"
+        
+        bad_questions_indicate:
+          - "Only asking about compensation/benefits - purely transactional mindset"
+          - "No questions at all - not interested or hasn't thought about it"
+          - "Questions easily answered by website - didn't prepare at all"
+      
+      closing_strong_candidates:
+        
+        if_strong_candidate:
+          - "Express enthusiasm explicitly - 'We'd love to have you on the team'"
+          - "Explain next steps and timeline - 'We'll debrief today, decision by Friday'"
+          - "Answer any remaining questions thoroughly and honestly"
+          - "Make them excited about opportunity - paint picture of what they'd accomplish"
+        
+        if_unsure:
+          - "Be neutral and professional - don't oversell if you're not sure"
+          - "Explain debrief process - 'Team will discuss, I'll follow up next week'"
+          - "Don't make promises you can't keep"
+      
+      outcome: "Final input into hire/no-hire decision"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Five to six stage process: Recruiter screen → Hiring manager → Technical depth → Technical breadth → Behavioral → Final"
+    - "Hiring manager screen is critical - evaluate trajectory, not just credentials"
+    - "Technical interviews should use deep dive OR live coding OR system design based on role level"
+    - "Behavioral interview evaluates collaboration, ownership, communication using STAR method"
+    - "Final round with skip-level evaluates strategic thinking and values alignment"
+    - "Take detailed notes during every interview - memory fades fast"
+    - "Calibrate regularly with other interviewers to ensure consistent standards"
+    - "Sell the role throughout process - strong candidates have options"
+    - "No hire is better than bad hire - always"
+    - "Complete process should take 2-3 weeks max - strong candidates won't wait longer"
+
+---
