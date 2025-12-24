@@ -1,0 +1,493 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "04"
+  title: "Detection Engineering Team Composition"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 7
+
+# ============================================================================
+# SECTION 04: DETECTION ENGINEERING TEAM COMPOSITION
+# ============================================================================
+
+detection_engineering_team_composition:
+  
+  mission: "Build automated detections that identify adversary activity at scale with high accuracy and low false positive rates"
+  
+  cross_reference: |
+    For detailed detection engineering methodologies, see Chapter 2.4 - Detection Engineering.
+    This section focuses on team structure, roles, and evolution.
+  
+  # --------------------------------------------------------------------------
+  # Core Roles
+  # --------------------------------------------------------------------------
+  
+  core_roles:
+    
+    detection_engineer:
+      primary_responsibilities:
+        - "Write detection logic (Sigma, KQL, SPL, custom DSL)"
+        - "Test detections against attack data"
+        - "Tune false positives to <5%"
+        - "Document detection rationale and response playbooks"
+      
+      secondary_responsibilities:
+        - "Contribute to detection framework improvements"
+        - "Participate in purple team exercises"
+        - "Mentor junior team members"
+        - "Collaborate with SOC on alert quality"
+      
+      levels:
+        
+        junior_l3:
+          experience: "0-2 years in detection engineering"
+          
+          expectations:
+            - "Ships 5-8 quality detections per quarter"
+            - "Implements detections from specifications written by seniors"
+            - "Learns detection patterns and attacker techniques"
+            - "Performs basic triage of own detections"
+            - "Participates in on-call rotation with backup"
+          
+          skill_focus:
+            - "MITRE ATT&CK framework mastery"
+            - "Query language proficiency (KQL, SPL, etc)"
+            - "Understanding data sources and their limitations"
+            - "Basic statistics for tuning false positives"
+          
+          growth_path: "L4 in 12-24 months with consistent execution and learning"
+          
+          compensation_range: "$90K-$130K base depending on market and location"
+        
+        mid_level_l4:
+          experience: "2-4 years in detection engineering"
+          
+          expectations:
+            - "Ships 10-15 quality detections per quarter"
+            - "Designs detection logic independently from threat intel"
+            - "Performs end-to-end detection lifecycle (design, implement, test, tune, deploy)"
+            - "Reduces false positives through advanced tuning techniques"
+            - "Contributes reusable detection patterns to team library"
+            - "Mentors L3 engineers"
+          
+          skill_focus:
+            - "Advanced query optimization for performance"
+            - "Statistical analysis for baselining and anomaly detection"
+            - "Deep understanding of adversary tradecraft"
+            - "Detection testing methodologies and automation"
+          
+          growth_path: "L5 in 18-30 months with demonstrated technical leadership"
+          
+          compensation_range: "$130K-$170K base"
+        
+        senior_l5:
+          experience: "5-8 years in detection engineering or related fields"
+          
+          expectations:
+            - "Ships 15-20 detections per quarter OR architects detection systems"
+            - "Designs detection strategies for entire attack techniques"
+            - "Mentors junior and mid-level engineers"
+            - "Leads purple team exercises"
+            - "Identifies gaps in detection coverage proactively"
+            - "Contributes to open-source detection projects"
+            - "Reviews all detection PRs for quality"
+          
+          skill_focus:
+            - "Detection architecture patterns"
+            - "Cross-platform detection strategies"
+            - "Team technical leadership"
+            - "Communication with executives and stakeholders"
+          
+          growth_path: "L6 (staff) in 3-5 years with org-wide impact"
+          
+          compensation_range: "$170K-$220K base"
+        
+        staff_l6:
+          experience: "8-12+ years, recognized expert in detection engineering"
+          
+          expectations:
+            - "Designs detection platform architecture"
+            - "Defines team technical direction and strategy"
+            - "Represents team in engineering-wide decisions"
+            - "Publishes research, speaks at conferences"
+            - "Solves novel detection problems others can't"
+            - "Leads cross-team technical initiatives"
+            - "Mentors senior engineers toward staff level"
+          
+          skill_focus:
+            - "System design at scale"
+            - "Multi-team technical leadership"
+            - "Strategic thinking and roadmap planning"
+            - "Industry influence and thought leadership"
+          
+          note: "Not every team needs staff+ engineers - they should be rare, 1 per 15-20 engineers"
+          
+          compensation_range: "$220K-$300K+ base"
+    
+    detection_platform_engineer:
+      when_needed: "Team of 8+ detection engineers, or heavy automation focus"
+      
+      background: "Software engineering background with security interest, not necessarily deep detection experience"
+      
+      responsibilities:
+        - "Build and maintain detection deployment system"
+        - "Create detection testing framework"
+        - "Build detection-as-code pipeline (git → CI/CD → production)"
+        - "Optimize query performance at scale"
+        - "Integrate with SIEM, EDR, and custom data sources"
+        - "Build developer experience tools for detection engineers"
+      
+      why_different_from_detection_engineer: |
+        Detection engineers write detections. Platform engineers build the systems that 
+        make detection engineers 10x more productive. They think about scale, reliability, 
+        developer experience, and automation.
+      
+      example_impact:
+        before: "Detection engineers spend 40% time on deployment, testing, tuning infrastructure"
+        after: "Detection engineers spend 90% time on detection logic, 10% on infrastructure"
+        metric: "Team goes from 40 detections/quarter to 120 detections/quarter with same headcount"
+      
+      compensation_range: "$150K-$220K base depending on level (L4-L6)"
+    
+    threat_researcher:
+      when_needed: "Team of 10+ engineers, or specific threat-focused organization (defense contractors, security vendors)"
+      
+      background: "Offensive security or malware analysis background"
+      
+      responsibilities:
+        - "Research emerging threats and attacker techniques"
+        - "Reverse engineer malware for detection signatures"
+        - "Test detections against real attack tools"
+        - "Develop novel detection methodologies"
+        - "Publish threat intelligence reports"
+        - "Collaborate with threat intel team on adversary TTPs"
+      
+      value_proposition: |
+        Most teams rely on external threat intelligence and public reports. A threat 
+        researcher gives you detection strategies others don't have - they find the 
+        subtle behaviors that generic detections miss.
+      
+      cost_benefit_analysis:
+        cost: "$180K-$250K for senior researcher"
+        benefit: "5-10 high-value detections per quarter that competitors don't have"
+        when_justified: "If you're high-value target (finance, defense, critical infrastructure) or selling security products"
+      
+      compensation_range: "$160K-$250K base depending on experience"
+  
+  # --------------------------------------------------------------------------
+  # Four-Phase Evolution
+  # --------------------------------------------------------------------------
+  
+  four_phase_evolution:
+    
+    phase_1_founding:
+      team_size: "1-2 people (you + maybe 1 engineer)"
+      timeline: "Months 0-6"
+      
+      primary_focus: "Prove value - ship detections that catch real threats"
+      secondary_focus: "Build credibility with SOC and engineering teams"
+      
+      what_to_build:
+        - "20-30 high-quality detections covering common attacks (phishing, malware, lateral movement)"
+        - "Basic detection documentation (what it detects, how to investigate, false positive guidance)"
+        - "Integration with existing SIEM/EDR"
+        - "Response runbooks for top 10 detections"
+      
+      what_not_to_build:
+        - "Detection platform (too early - focus on proving value first)"
+        - "Perfect testing framework (manual testing is fine at this stage)"
+        - "Advanced automation (focus on detections, not infrastructure)"
+      
+      hiring_profile_for_first_hire:
+        title: "Senior Detection Engineer who can work independently"
+        
+        must_have_skills:
+          - "Strong detection writing experience (2+ years)"
+          - "Comfortable with ambiguity and building from scratch"
+          - "Can work without much direction"
+          - "Good communication (will interface with SOC directly)"
+        
+        nice_to_have:
+          - "Purple team experience"
+          - "Some automation/scripting skills"
+          - "Experience with multiple SIEMs"
+        
+        do_not_hire: "Junior engineer who needs lots of hand-holding - you don't have time"
+      
+      success_metrics:
+        - "30+ detections in production"
+        - "SOC using detections daily and providing positive feedback"
+        - "Caught at least 2-3 real incidents SOC wouldn't have found otherwise"
+        - "False positive rate <5% average"
+        - "Leadership sees value - approved budget for more headcount"
+      
+      common_pitfalls:
+        - "Over-engineering - you don't need platforms yet, just ship detections"
+        - "Trying to cover everything - focus on high-value gaps first"
+        - "Ignoring SOC feedback - they're your customers, listen to them"
+        - "Not documenting - future you will hate current you when trying to remember why detection exists"
+      
+      exit_criteria: "Team is shipping consistently, SOC is happy, leadership wants to invest more"
+    
+    phase_2_scaling:
+      team_size: "3-5 people"
+      timeline: "Months 6-18"
+      
+      primary_focus: "Scale detection production and reduce toil"
+      secondary_focus: "Build detection patterns and reusable components"
+      
+      what_to_build:
+        - "100+ detections covering MITRE ATT&CK"
+        - "Detection templates and patterns for common scenarios"
+        - "Basic CI/CD for detection deployment (automated testing, git workflow)"
+        - "Testing framework for regression testing"
+        - "Coverage tracking dashboard (which ATT&CK techniques covered)"
+      
+      team_composition:
+        manager: "You - now 50% management, 50% technical work"
+        senior_engineer: "Technical lead for detection development"
+        mid_engineer_1: "Focused on cloud detections"
+        mid_engineer_2: "Focused on endpoint detections"
+        junior_engineer: "Learning, contributing under mentorship"
+      
+      organizational_needs:
+        - "Clear detection ownership model (who owns what)"
+        - "Weekly team sync for coordination"
+        - "Monthly metrics review with leadership"
+        - "Quarterly planning process"
+        - "On-call rotation for detection issues"
+      
+      hiring_priorities:
+        next_hire: "Mid-level engineer with complementary background"
+        
+        example: |
+          If team is all SOC analysts, hire someone with dev or SRE background. 
+          If team is all endpoint focused, hire someone with cloud experience.
+          Cognitive diversity is force multiplier.
+      
+      success_metrics:
+        - "100+ detections in production"
+        - "Detection deployment time <2 weeks (from idea to production)"
+        - "Team shipping 40+ detections/quarter"
+        - "MITRE ATT&CK coverage >60%"
+        - "SOC satisfaction score >7/10"
+        - "Mean time to fix false positives <3 days"
+      
+      common_pitfalls:
+        - "Hiring too fast - you can't onboard 3 people at once effectively"
+        - "Not investing in documentation - new hires will struggle, knowledge lost"
+        - "Manager staying too hands-on - team can't grow, you become bottleneck"
+        - "Ignoring technical debt - will slow you down later, accumulates like compound interest"
+      
+      exit_criteria: "Team is productive, hiring is working, but quality and coordination becoming challenges"
+    
+    phase_3_optimization:
+      team_size: "6-10 people"
+      timeline: "Months 18-36"
+      
+      primary_focus: "Optimize for quality and maintainability"
+      secondary_focus: "Build platform capabilities for force multiplication"
+      
+      what_to_build:
+        - "Detection platform with automated testing and deployment"
+        - "Detection-as-code with git workflows and code review"
+        - "Advanced analytics for FP reduction (statistical baselines, ML models)"
+        - "Cross-platform detection strategies"
+        - "Integration with threat intelligence feeds"
+        - "Purple team automation framework"
+      
+      team_composition:
+        manager: "You - 80% management, 20% technical (architecture only)"
+        staff_or_senior_engineer: "Technical lead, architecture decisions, mentoring seniors"
+        detection_engineers: "5-6 engineers of various levels writing detections"
+        platform_engineer: "Building detection infrastructure and tooling"
+        optional_researcher: "If budget allows, adds threat research capability"
+      
+      organizational_structure_options:
+        
+        option_1_by_function:
+          detection_team: "4 engineers writing detections"
+          platform_team: "2-3 engineers building infrastructure"
+        
+        option_2_by_platform:
+          cloud_detection_team: "3 engineers focused on cloud"
+          endpoint_detection_team: "3 engineers focused on endpoints"
+          platform_engineer: "Supports both teams"
+      
+      success_metrics:
+        - "200+ detections in production"
+        - "Detection deployment time <3 days"
+        - "Team shipping 60+ detections/quarter"
+        - "MITRE ATT&CK coverage >80%"
+        - "Mean time to deploy fix <1 day"
+        - "SOC satisfaction score >8/10"
+        - "Platform adoption: other teams want to use your infrastructure"
+      
+      challenges:
+        - "Coordination overhead between engineers increasing"
+        - "Need strong senior engineers to prevent architecture drift"
+        - "Manager can no longer review every detection personally"
+        - "Maintaining quality as team scales"
+        - "Balancing feature work vs platform work"
+      
+      exit_criteria: "Team is mature, platform is solid, but growing beyond single manager's capacity"
+    
+    phase_4_industry_leading:
+      team_size: "10-20 people"
+      timeline: "36+ months"
+      
+      primary_focus: "Industry-leading detection capabilities and thought leadership"
+      secondary_focus: "Open-source contributions and published research"
+      
+      what_youve_built:
+        - "World-class detection platform used as reference architecture"
+        - "Automated detection generation from threat intel"
+        - "ML-powered false positive reduction at scale"
+        - "Published detection research that advances the field"
+        - "Open-source detection framework others adopt"
+        - "Detection coverage that competitors benchmark against"
+      
+      team_composition:
+        director_or_senior_manager: "You, if promoted, or you now report to one"
+        staff_plus_engineers: "2-3 staff/principal engineers for technical leadership"
+        senior_engineers: "4-5 senior engineers, technical leads of subteams"
+        detection_engineers: "10-12 engineers of various levels"
+      
+      organizational_structure:
+        detection_development_team:
+          size: "6-8 engineers"
+          focus: "Writing detections for new threats"
+          tech_lead: "Senior engineer"
+        
+        detection_platform_team:
+          size: "4-5 engineers"
+          focus: "Detection infrastructure and tooling"
+          tech_lead: "Staff engineer"
+        
+        detection_research_team:
+          size: "2-3 researchers"
+          focus: "Novel detection methodologies, threat research"
+          tech_lead: "Senior researcher or staff engineer"
+      
+      industry_presence:
+        - "Speaking at conferences (Black Hat, BSides, RSA)"
+        - "Publishing research papers on detection methodologies"
+        - "Contributing to open-source projects (Sigma, YARA, etc)"
+        - "Other companies copying your approaches"
+        - "Recruited for industry working groups and standards bodies"
+      
+      success_metrics:
+        - "500+ detections in production"
+        - "Detection deployment time <1 day"
+        - "Team shipping 80+ detections/quarter"
+        - "MITRE ATT&CK coverage >90%"
+        - "Industry recognition (awards, conference talks accepted)"
+        - "Open-source projects with 100+ stars"
+        - "Other companies asking to learn from you"
+      
+      at_this_level: |
+        You're no longer building a team - you're building a machine that builds teams. 
+        Your focus is strategic direction, talent development, and industry influence. 
+        You're probably being recruited for CISO or VP Security roles.
+  
+  # --------------------------------------------------------------------------
+  # When to Add Specialized Roles
+  # --------------------------------------------------------------------------
+  
+  when_to_add_specialized_roles:
+    
+    detection_platform_engineer:
+      add_when:
+        - "Team of 8+ detection engineers"
+        - "Significant time spent on deployment and tooling (>30% of team time)"
+        - "Manual processes becoming bottleneck"
+        - "Quality issues from lack of testing automation"
+      
+      dont_add_when:
+        - "Team smaller than 8 engineers - not enough leverage yet"
+        - "Platform requirements unclear - will build wrong thing"
+        - "Can't find engineer with right background (dev + security)"
+      
+      expected_impact: "Within 6 months, detection engineer productivity increases 2-3x"
+    
+    threat_researcher:
+      add_when:
+        - "Team of 10+ engineers with solid detection coverage"
+        - "Need differentiation - commodity detections not enough"
+        - "High-value target requiring advanced threat understanding"
+        - "Selling security products that need cutting-edge detection research"
+      
+      dont_add_when:
+        - "Basic detection coverage incomplete - fix that first"
+        - "Budget constraints - researchers are expensive"
+        - "No clear threat research goals or mandate"
+      
+      expected_impact: "5-10 novel detections per quarter, team learns advanced techniques"
+    
+    security_data_engineer:
+      add_when:
+        - "Data quality issues blocking detection development"
+        - "Need custom data sources beyond standard SIEM/EDR"
+        - "Data volume at scale (multi-TB per day)"
+        - "Detection performance issues from data infrastructure"
+      
+      responsibilities:
+        - "Build data pipelines for security logs"
+        - "Optimize data storage and query performance"
+        - "Ensure data quality and completeness"
+        - "Build data models for security use cases"
+      
+      dont_add_when:
+        - "Existing data infrastructure team can support you"
+        - "Data problems are solvable with existing tools"
+        - "Team smaller than 15 people - not enough leverage"
+  
+  # --------------------------------------------------------------------------
+  # Hiring Priorities by Phase
+  # --------------------------------------------------------------------------
+  
+  hiring_priorities_by_phase:
+    
+    phase_1_founding:
+      hire_1: "Senior detection engineer who can work independently"
+      rationale: "Need someone who can ship without hand-holding while you're building credibility"
+    
+    phase_2_scaling:
+      hire_2: "Mid-level engineer with complementary background (cloud if you're endpoint, dev if you're all SOC)"
+      hire_3: "Another mid-level or junior with high potential"
+      hire_4: "Mid-level engineer in second specialty area"
+      rationale: "Build cognitive diversity, establish specialization areas, balance levels for sustainability"
+    
+    phase_3_optimization:
+      hire_5: "Detection platform engineer (software engineer with security interest)"
+      hire_6_7: "More detection engineers (mix of levels)"
+      hire_8: "Senior engineer who can be tech lead"
+      rationale: "Scale through tooling, need strong technical leadership as manager pulls back from code"
+    
+    phase_4_industry_leading:
+      hire_9_10: "Threat researchers for differentiation"
+      hire_11_plus: "Continue balanced hiring of engineers at all levels"
+      hire_staff: "Staff engineer for technical leadership across organization"
+      rationale: "Thought leadership, industry impact, technical excellence at scale"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Detection engineers are core role - L3 (junior) through L6 (staff)"
+    - "Junior ships 5-8 detections/quarter, senior ships 15-20 or architects systems"
+    - "Add platform engineer at 8+ team size for 2-3x productivity gain"
+    - "Add threat researcher at 10+ team size for differentiation, if budget allows"
+    - "Four phases: Founding (1-2 people) → Scaling (3-5) → Optimization (6-10) → Industry-leading (10-20)"
+    - "Phase 1: Prove value with 20-30 detections in 6 months"
+    - "Phase 2: Scale to 100+ detections, build basic automation"
+    - "Phase 3: Build platform, optimize quality, reach 200+ detections with 80% ATT&CK coverage"
+    - "Phase 4: Industry leadership, 500+ detections, 90% coverage, publishing research"
+    - "Don't hire platform engineer or researcher too early - need leverage first"
+    - "Each phase typically 6-18 months - don't rush"
+
+---
