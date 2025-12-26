@@ -1,0 +1,493 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "32"
+  title: "Knowing When to Leave"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 6
+
+# ============================================================================
+# SECTION 32: KNOWING WHEN TO LEAVE
+# ============================================================================
+
+knowing_when_to_leave:
+  
+  philosophy: |
+    Most managers stay too long at jobs that aren't working. Fear of change, loyalty 
+    to team, golden handcuffs, hope that things will improve. Meanwhile, you're miserable, 
+    not growing, and wasting your best career years. Knowing when to leave is critical 
+    career skill.
+    
+    Leaving isn't failure. Sometimes the right answer is "this isn't working and I need 
+    to move on." Strategic career moves accelerate growth. Staying in wrong role for 
+    loyalty or fear holds you back. Your career is 40+ years - spending 2-3 years in 
+    wrong place is costly mistake.
+  
+  # --------------------------------------------------------------------------
+  # Good Reasons to Leave
+  # --------------------------------------------------------------------------
+  
+  good_reasons_to_leave:
+    
+    no_longer_learning_or_growing:
+      
+      signs:
+        - "Doing same work for 2+ years with no new challenges"
+        - "Mastered role, no room to grow further"
+        - "Skills stagnating while industry moves forward"
+        - "Bored and unchallenged"
+      
+      why_this_matters: "Learning trajectory is most important factor in long-term success"
+      
+      when_to_leave: "If no growth path internally and been trying 6-12 months"
+      
+      example: |
+        You've been detection engineering manager for 3 years. Team is stable, work is 
+        routine, no new challenges. Company has no director role for you to grow into. 
+        You've built all the things you wanted to build. Time to find bigger challenge.
+    
+    blocked_promotion_path:
+      
+      signs:
+        - "Ready for promotion but no path (no openings, company structure)"
+        - "Repeatedly passed over for promotion despite strong performance"
+        - "Would take 5+ years to get promoted internally vs 2 years elsewhere"
+        - "Politics preventing advancement"
+      
+      when_to_leave:
+        - "If you're performing at next level for 12+ months with no promotion"
+        - "If company has no path (too small, no higher level roles)"
+        - "If you've had explicit conversation and timeline is years"
+      
+      alternative: "Get promoted externally - join new company at higher level"
+      
+      example: |
+        You're ready for director role, performing at that level. Company only has one 
+        director position and current person isn't leaving. You could wait 5 years or 
+        get director title elsewhere in 6 months.
+    
+    compensation_significantly_below_market:
+      
+      signs:
+        - "Market data shows you're 30%+ underpaid for level"
+        - "Company doesn't adjust despite evidence"
+        - "Equity worthless (failed startup, underwater options)"
+        - "Can get 50%+ raise by moving"
+      
+      when_to_leave:
+        - "If you've tried negotiating and got nowhere"
+        - "If compensation is affecting quality of life"
+        - "If company can't/won't pay market rate"
+      
+      caveat: "Money alone shouldn't drive decision, but significant gap matters"
+      
+      example: |
+        You're paid $150K but market is $200K for your role. Company says budget doesn't 
+        allow raises. You have offers for $220K. 47% raise is hard to ignore.
+    
+    toxic_culture_or_management:
+      
+      signs:
+        - "Unethical behavior tolerated or encouraged"
+        - "Toxic manager making your life miserable"
+        - "Backstabbing and politics over merit"
+        - "Burnout and attrition epidemic"
+        - "Your values fundamentally misaligned with company"
+      
+      when_to_leave: "Immediately if toxic and unlikely to change"
+      
+      dont_sacrifice_health: "No job worth your mental health or compromising ethics"
+      
+      example: |
+        CISO asks you to hide security issues from board. Leadership tolerates harassment. 
+        Multiple good people quit citing culture. This won't get better - leave.
+    
+    company_failing_or_unstable:
+      
+      signs:
+        - "Multiple rounds of layoffs"
+        - "Can't make payroll consistently"
+        - "Leadership exodus"
+        - "Burning through cash with no revenue"
+        - "Obvious the company won't survive"
+      
+      when_to_leave: "When writing is on wall, not after layoffs start"
+      
+      loyalty_doesnt_pay: "Going down with ship doesn't help anyone"
+      
+      example: |
+        Startup has 4 months runway, no new funding lined up, missed 3 quarterly goals. 
+        Leadership says 'we'll figure it out' but you see the numbers. Start looking now.
+    
+    work_life_balance_unsustainable:
+      
+      signs:
+        - "Working 70+ hours per week with no end in sight"
+        - "Always on-call, never truly off"
+        - "Missing family events, relationships suffering"
+        - "Health deteriorating from stress"
+      
+      when_to_leave:
+        - "If you've raised concerns and nothing changes"
+        - "If culture glorifies overwork"
+        - "If your health or relationships are at risk"
+      
+      life_is_short: "You'll regret missing your kids' childhood more than missing work"
+      
+      example: |
+        You've worked 60-70 hour weeks for 18 months. On-call 24/7. Missed anniversary, 
+        kids' events. Talked to manager - told 'that's the job'. Find job that respects 
+        your life.
+    
+    better_opportunity_alignment:
+      
+      signs:
+        - "Dream job offer in area you're passionate about"
+        - "Opportunity to work on cutting-edge problems"
+        - "Join company whose mission deeply resonates with you"
+        - "Role that's perfect next step in your career arc"
+      
+      when_to_leave: "When opportunity clearly accelerates your career trajectory"
+      
+      dont_stay_for_loyalty: "Company would replace you if needed - make best decision for you"
+      
+      example: |
+        You get offer to lead detection engineering at company building exactly the 
+        platform you've dreamed of. Current role is fine but not exciting. Clear this 
+        is better move - take it.
+  
+  # --------------------------------------------------------------------------
+  # Bad Reasons to Leave
+  # --------------------------------------------------------------------------
+  
+  bad_reasons_to_leave:
+    
+    one_bad_project_or_quarter:
+      
+      why_bad: "Every job has rough patches - don't bail at first difficulty"
+      
+      what_to_do: "See it through, learn from it, give it 6-12 months"
+      
+      exception: "If it's part of pattern, not isolated incident"
+    
+    conflict_with_one_person:
+      
+      why_bad: "Interpersonal conflicts exist everywhere - can't run from them"
+      
+      what_to_do: "Try to resolve conflict or work with HR - leaving should be last resort"
+      
+      exception: "If person is abusive and management won't address it"
+    
+    grass_is_greener_syndrome:
+      
+      why_bad: "Assuming everywhere else is better when you haven't tried to fix issues"
+      
+      reality: "Every company has problems - question is whether problems are solvable"
+      
+      what_to_do: "Identify what's bothering you, try to change it, then decide"
+    
+    running_from_performance_issues:
+      
+      why_bad: "Your performance problems will follow you to new job"
+      
+      reality: "If you're underperforming, switching jobs doesn't fix underlying issue"
+      
+      what_to_do: "Address performance issues first, then decide if role is wrong fit"
+    
+    purely_for_title:
+      
+      why_bad: "Title without growth, interesting work, or compensation is hollow"
+      
+      example: "Take 'director' title at tiny startup but same scope and less pay"
+      
+      what_to_do: "Evaluate whole package - title, scope, growth, compensation, company"
+  
+  # --------------------------------------------------------------------------
+  # How to Decide
+  # --------------------------------------------------------------------------
+  
+  how_to_decide:
+    
+    the_2x2_framework:
+      
+      dimensions:
+        learning_and_growth: "Am I growing? Learning new skills? Challenged?"
+        
+        satisfaction: "Do I enjoy the work? Team? Culture?"
+      
+      quadrants:
+        
+        high_learning_high_satisfaction:
+          status: "Stay - you're in great spot"
+          action: "Keep investing, this is rare"
+        
+        high_learning_low_satisfaction:
+          status: "Tolerate short-term for growth"
+          action: "If learning trajectory is strong, stick it out 1-2 years"
+          caveat: "Unless satisfaction is low because of ethics or toxicity"
+        
+        low_learning_high_satisfaction:
+          status: "Comfortable but risky long-term"
+          action: "Find growth opportunities internally or start looking externally"
+          risk: "Skills atrophy, career stagnates, becomes hard to leave"
+        
+        low_learning_low_satisfaction:
+          status: "Leave - no reason to stay"
+          action: "Start job search immediately"
+    
+    the_regret_minimization_framework:
+      
+      question: "When I'm 80 years old, will I regret staying or leaving?"
+      
+      for_staying:
+        - "Regret not trying to make it work?"
+        - "Regret leaving great team during hard time?"
+        - "Regret jumping ship too quickly?"
+      
+      for_leaving:
+        - "Regret wasting years in wrong role?"
+        - "Regret not taking career risk?"
+        - "Regret letting fear hold me back?"
+      
+      usually: "People regret staying too long more than leaving too soon"
+    
+    trial_separation:
+      
+      concept: "Test if issues are role-specific or you-specific"
+      
+      how:
+        - "Take 2 weeks vacation fully disconnected"
+        - "During vacation, reflect: do I miss work? Dread returning?"
+        - "When you return, do you feel recharged or immediately drained?"
+      
+      signals:
+        should_stay: "Recharged after vacation, excited to return, miss the work"
+        should_leave: "Dread returning, Sunday scaries, recharged feeling gone in 2 days"
+    
+    talk_to_trusted_advisors:
+      
+      who:
+        - "Mentor who knows you well"
+        - "Peer managers at other companies"
+        - "Former manager or colleague"
+        - "Partner/spouse (they see impact on you)"
+      
+      questions_to_ask:
+        - "What do you see in my situation?"
+        - "Am I being too hasty or too patient?"
+        - "What would you do in my shoes?"
+      
+      caveat: "Get input but make your own decision - you live with consequences"
+  
+  # --------------------------------------------------------------------------
+  # How to Leave Well
+  # --------------------------------------------------------------------------
+  
+  how_to_leave_well:
+    
+    timing:
+      
+      when_to_start_looking:
+        early_signs: "Start casually looking when you notice declining satisfaction"
+        
+        serious_search: "When you've decided to leave (don't need offer in hand)"
+        
+        dont_wait_for: "Perfect time (never exists), bonus payout if miserable"
+      
+      notice_period:
+        standard: "2 weeks is standard in US"
+        
+        senior_roles: "3-4 weeks is professional for manager roles"
+        
+        consider:
+          - "Critical projects mid-flight"
+          - "Hiring/onboarding if you're in middle of it"
+          - "Transition complexity"
+        
+        dont_stay_forever: "4 weeks is reasonable max - company will survive"
+    
+    resignation_conversation:
+      
+      prepare:
+        - "Write resignation letter in advance"
+        - "Know your reasons but keep them professional"
+        - "Be ready for counter-offer"
+        - "Schedule meeting with your manager (30 min)"
+      
+      the_conversation:
+        
+        be_direct:
+          opening: |
+            "I wanted to let you know that I've decided to resign. My last day will be 
+            [date, 2-4 weeks out]. This wasn't an easy decision, but it's the right move 
+            for my career."
+        
+        keep_it_professional:
+          do_say:
+            - "This is about career growth"
+            - "I learned a lot here and appreciate the opportunity"
+            - "I want to ensure smooth transition"
+          
+          dont_say:
+            - "This place is toxic and you're terrible"
+            - "I'm so excited to leave"
+            - "Everyone else is incompetent"
+        
+        dont_over_explain:
+          - "You don't owe detailed justification"
+          - "Keep it brief and professional"
+          - "Don't trash company or people"
+      
+      counter_offer:
+        
+        expect_it: "Good companies try to retain good people"
+        
+        typical_counter:
+          - "Salary increase (10-20%)"
+          - "Promotion"
+          - "Different role or team"
+          - "Better work arrangement"
+        
+        accepting_counter_offer:
+          pros:
+            - "Don't have to job search or relocate"
+            - "Keep relationships and context"
+            - "Issues addressed immediately"
+          
+          cons:
+            - "Statistics show 70% who accept counter leave within 12 months anyway"
+            - "Relationship with manager damaged (shown you were looking)"
+            - "Root issues rarely fixed by compensation"
+            - "Company knows you're flight risk"
+          
+          when_to_accept:
+            - "Only if counter addresses actual reason you were leaving"
+            - "If you were leaving purely for compensation and they match"
+            - "If they offer role change you genuinely wanted"
+          
+          when_to_decline:
+            - "If leaving for culture, learning, work-life balance - money doesn't fix"
+            - "If you've mentally checked out already"
+            - "If new opportunity is clearly better"
+        
+        how_to_decline_counter:
+          gracious: |
+            "I appreciate the offer, and it means a lot that you value my work. But I've 
+            thought this through carefully, and I'm committed to this move. It's about 
+            my career growth, not just compensation."
+    
+    transition:
+      
+      document_everything:
+        - "Systems you own and how they work"
+        - "Ongoing projects and their status"
+        - "Key relationships and context"
+        - "Passwords and access (transfer securely)"
+      
+      train_your_replacement:
+        - "If they hire replacement before you leave, train them"
+        - "If not, train someone else on team"
+        - "Don't hoard knowledge out of spite"
+      
+      tie_up_loose_ends:
+        - "Complete critical work in flight"
+        - "Hand off projects clearly"
+        - "Update stakeholders on transition"
+      
+      be_professional_until_the_end:
+        - "Don't check out mentally"
+        - "Don't badmouth company on way out"
+        - "Leave on good terms - security is small world"
+    
+    exit_interview:
+      
+      purpose: "Company wants to understand why you're leaving, improve retention"
+      
+      be_honest_but_diplomatic:
+        do_share:
+          - "Constructive feedback on what could be better"
+          - "Reasons for leaving if they can learn from it"
+          - "Positive aspects you appreciated"
+        
+        dont_share:
+          - "Personal attacks on individuals"
+          - "Angry venting"
+          - "Confidential information from new company"
+      
+      remember: "Exit interview rarely changes anything, but you might want to return someday"
+    
+    stay_connected:
+      
+      why:
+        - "Security community is small - you'll encounter people again"
+        - "Former colleagues become valuable network"
+        - "Boomerang (returning to company) is common"
+      
+      how:
+        - "Connect on LinkedIn before you leave"
+        - "Occasional coffee or lunch with former team"
+        - "Refer good candidates to them"
+        - "Keep relationships warm, not transactional"
+  
+  # --------------------------------------------------------------------------
+  # After You Leave
+  # --------------------------------------------------------------------------
+  
+  after_you_leave:
+    
+    dont_look_back:
+      
+      resist_temptation:
+        - "Don't constantly check old company Slack"
+        - "Don't stay on team email lists"
+        - "Don't obsess over what's happening without you"
+      
+      why: "Mental energy should be on new role, not old one"
+      
+      exception: "Reasonable transition period for handoff, then cut ties"
+    
+    give_new_role_fair_chance:
+      
+      honeymoon_period:
+        first_3_months: "Everything seems great (or everything seems terrible)"
+        
+        real_assessment: "6-12 months to truly evaluate fit"
+      
+      dont_immediately_regret:
+        - "Grass is always greener when you're new"
+        - "Old job seems better in retrospect (forgetting why you left)"
+        - "Give new role time before concluding you made mistake"
+    
+    learn_from_experience:
+      
+      reflect:
+        - "What did I learn from this role?"
+        - "What would I do differently next time?"
+        - "What am I looking for in next role?"
+      
+      apply_lessons:
+        - "Set boundaries earlier in new role"
+        - "Negotiate better if you left for compensation"
+        - "Assess culture fit more carefully if culture was issue"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Good reasons to leave: no longer learning/growing, blocked promotion (performing at next level 12+ months), 30%+ underpaid, toxic culture, company failing, unsustainable work-life balance"
+    - "Bad reasons: one bad project (every job has rough patches), single conflict (exists everywhere), grass is greener (try fixing first), running from performance issues"
+    - "2x2 framework: High learning + high satisfaction = stay, Low learning + low satisfaction = leave immediately"
+    - "Regret minimization: when 80 years old, will you regret staying or leaving? Usually regret staying too long more than leaving too soon"
+    - "Trial separation: take 2 weeks off fully disconnected - if you dread returning, time to leave"
+    - "Resignation: 2 weeks notice (3-4 for senior roles), be direct and professional, don't over-explain or trash company"
+    - "Counter-offers: 70% who accept leave within 12 months - accept only if addresses actual reason you're leaving (not just money for culture issues)"
+    - "Transition well: document everything, train replacement, tie up loose ends, be professional until end - security is small world"
+    - "Exit interview: be honest but diplomatic, constructive feedback, don't burn bridges - you might want to return someday"
+    - "After leaving: don't obsess over old company, give new role 6-12 months fair chance, learn from experience"
+    - "Remember: leaving isn't failure, strategic career moves accelerate growth, your career is 40+ years - don't waste years in wrong place"
+
+---
