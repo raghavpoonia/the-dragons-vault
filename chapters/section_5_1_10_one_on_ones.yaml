@@ -1,0 +1,451 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "10"
+  title: "One-on-Ones Mastery"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 7
+
+# ============================================================================
+# SECTION 10: ONE-ON-ONES MASTERY
+# ============================================================================
+
+one_on_ones_mastery:
+  
+  philosophy: |
+    One-on-ones are the most important meeting you have as a manager. They are where 
+    you build relationships, provide coaching, hear problems early, and help people 
+    grow. Skip your other meetings if you must, but never skip or reschedule 1-on-1s. 
+    
+    This is THEIR time, not yours. They set the agenda. You listen, coach, provide 
+    context, and remove blockers. Done well, 1-on-1s are force multipliers. Done 
+    poorly, they're wasted time that breeds resentment.
+  
+  # --------------------------------------------------------------------------
+  # What One-on-Ones Are and Are Not
+  # --------------------------------------------------------------------------
+  
+  what_they_are_and_are_not:
+    
+    what_they_are:
+      - "Dedicated time for direct report to talk about whatever they need"
+      - "Opportunity to provide coaching and mentorship"
+      - "Place to build trust and relationship"
+      - "Forum to hear problems and concerns early"
+      - "Time to provide context on company/team decisions"
+      - "Career development discussions"
+      - "Safe space to give and receive feedback"
+    
+    what_they_are_not:
+      
+      status_updates:
+        wrong: "Tell me what you worked on this week and progress on your projects"
+        why_wrong: "This is what Slack, email, and standup meetings are for. Waste of valuable 1-on-1 time."
+        alternative: "I already know what you're working on from standups. What do you want to talk about?"
+      
+      your_agenda:
+        wrong: "Here are 5 things I need to tell you about [company news, process changes, etc]"
+        why_wrong: "This is their time, not yours. Send email or Slack if you need to broadcast information."
+        alternative: "I have one thing I want to share (5 min). What's on your mind today?"
+      
+      performance_reviews:
+        wrong: "Let me tell you what you're doing wrong and areas you need to improve"
+        why_wrong: "Feedback should be continuous and in real-time, not saved for 1-on-1s. If you only give feedback in 1-on-1s, it creates anxiety."
+        alternative: "Give feedback immediately when you observe something (good or concerning). 1-on-1s are for deeper career discussions."
+      
+      accountability_meetings:
+        wrong: "Why didn't you finish X? What's taking so long on Y?"
+        why_wrong: "Feels like interrogation. Creates adversarial dynamic. People will avoid being honest."
+        alternative: "I noticed X is delayed. What's blocking you? How can I help?"
+  
+  # --------------------------------------------------------------------------
+  # Structure and Cadence
+  # --------------------------------------------------------------------------
+  
+  structure_and_cadence:
+    
+    frequency:
+      
+      weekly_cadence:
+        recommendation: "Weekly for most reports"
+        duration: "30 minutes (can extend to 60 if needed)"
+        
+        why_weekly:
+          - "Catch problems early before they fester"
+          - "Build relationship through consistent touchpoints"
+          - "Show you care by making them a priority"
+          - "Course correct quickly on work or concerns"
+        
+        when_biweekly_acceptable:
+          - "Very senior engineers (L6+) who are highly autonomous"
+          - "You have >10 direct reports and can't do weekly with everyone"
+          - "Direct report explicitly prefers biweekly"
+        
+        never_monthly: "Monthly is too infrequent. You'll lose touch with what's happening."
+      
+      scheduling:
+        same_time_every_week: "Tuesday 2:00 PM, every Tuesday, never move it"
+        
+        why_consistency_matters:
+          - "Shows reliability and commitment"
+          - "Becomes routine they can count on"
+          - "Easier to prepare when it's always same time"
+        
+        what_if_conflict:
+          reschedule_within_same_week: "If you must reschedule, do it within same week, not skip to next week"
+          they_can_reschedule_you_cant: "They can reschedule if they need. You cannot reschedule unless emergency."
+          never_cancel_repeatedly: "Canceling 1-on-1s repeatedly sends message: 'You're not important.'"
+    
+    location_and_format:
+      
+      in_person_options:
+        office: "Default - private conference room, your office, or quiet space"
+        walking_1_on_1: "30-min walk outside - good for relationship building, casual conversations, not for difficult topics"
+        coffee_shop: "Occasionally for change of scenery, but ensure privacy for sensitive topics"
+      
+      remote_options:
+        video_call: "Default - video on for both, builds rapport"
+        phone_call: "If video issues, but prefer video"
+        never_chat_only: "Slack/text is not a 1-on-1. Need real-time conversation."
+      
+      privacy_is_critical:
+        - "Private space where others can't hear"
+        - "Close door, book conference room"
+        - "Don't do 1-on-1s in open office where others overhear"
+        - "For remote, ensure both are in private space"
+    
+    agenda_ownership:
+      
+      they_own_the_agenda:
+        principle: "This is THEIR time. They decide what to discuss."
+        
+        how_to_start: |
+          "What's on your mind today?"
+          "What do you want to talk about?"
+          "What's most important for us to discuss?"
+        
+        if_they_say_nothing:
+          dont_accept: "Don't accept 'nothing' as answer - probe gently"
+          prompt: "Nothing going on? How are you feeling about work? Any concerns or questions?"
+          share_prompts: "At beginning of relationship, share potential topics they could bring"
+      
+      you_can_add_topics:
+        when: "After they've shared what's on their mind"
+        how: "I have one thing I want to discuss (should take 5-10 min). Is that okay?"
+        
+        your_typical_topics:
+          - "Provide context on company/team decisions"
+          - "Share feedback (positive or constructive)"
+          - "Discuss upcoming projects or priorities"
+          - "Career development check-in"
+    
+    common_agenda_topics:
+      
+      from_them:
+        - "Blockers on current work - need your help removing"
+        - "Concerns about project direction or priorities"
+        - "Team dynamics or interpersonal issues"
+        - "Career growth and development questions"
+        - "Feedback for you on management style"
+        - "Work-life balance concerns"
+        - "Questions about company strategy or decisions"
+        - "Ideas for improvements to team or processes"
+      
+      from_you:
+        - "Context on why certain decisions were made"
+        - "Feedback on recent work (specific examples)"
+        - "Career development check-ins"
+        - "Upcoming changes that affect them"
+        - "Recognition for great work"
+        - "Asking for their input on team decisions"
+  
+  # --------------------------------------------------------------------------
+  # Making One-on-Ones Effective
+  # --------------------------------------------------------------------------
+  
+  making_them_effective:
+    
+    your_role_as_manager:
+      
+      listen_more_than_talk:
+        ratio: "They should talk 70%, you talk 30%"
+        
+        why: "You learn by listening. They benefit from being heard."
+        
+        techniques:
+          - "Ask open-ended questions, not yes/no questions"
+          - "Pause after they finish speaking - don't immediately respond"
+          - "Paraphrase to confirm understanding: 'So what I'm hearing is...'"
+          - "Ask follow-up questions to go deeper"
+      
+      be_present:
+        what_it_means:
+          - "No laptop open, no phone checking"
+          - "Full attention on them"
+          - "Make eye contact"
+          - "Show you're engaged through body language and responses"
+        
+        if_you_need_to_take_notes:
+          - "Tell them why: 'I'm taking notes so I remember to follow up on this'"
+          - "Use notebook or tablet, not laptop (less barrier between you)"
+          - "Write quick notes, don't transcribe everything"
+      
+      ask_good_questions:
+        
+        open_ended_questions:
+          - "How are you feeling about [project/situation]?"
+          - "What's been most challenging this week?"
+          - "What would make you more effective?"
+          - "How can I better support you?"
+          - "What's one thing we should change about how the team works?"
+        
+        probing_questions:
+          - "Tell me more about that"
+          - "What makes you say that?"
+          - "What would ideal outcome look like?"
+          - "What have you tried so far?"
+        
+        avoid_yes_no_questions:
+          bad: "Is everything going okay?"
+          better: "How are things going? What's going well and what's challenging?"
+      
+      provide_context:
+        what: "Explain the 'why' behind decisions, not just the 'what'"
+        
+        example: |
+          Instead of: "We're changing our sprint planning process"
+          
+          Say: "We're changing sprint planning because the current process takes 2 hours 
+          and people feel like it's not productive time. The new process should be faster 
+          and give you more autonomy on task breakdown. Here's what's changing and why..."
+        
+        why_context_matters: "People are more bought-in when they understand reasoning. Reduces feeling of arbitrary decisions."
+      
+      be_honest:
+        what: "Don't sugarcoat or hide information"
+        
+        example_good: "Honestly, I don't know yet. That decision is above my level. But I'll find out and let you know."
+        
+        example_bad: "Everything's fine, nothing to worry about" (when actually company is struggling)
+        
+        why: "Trust is built on honesty. People can handle truth. They can't handle being lied to or kept in dark."
+    
+    taking_action_on_1_on_1s:
+      
+      take_notes:
+        what_to_capture:
+          - "Action items for you"
+          - "Action items for them"
+          - "Topics to revisit next time"
+          - "Concerns or themes that emerge over time"
+        
+        where_to_take_notes:
+          - "Shared doc (Google Doc) both can access and add to"
+          - "Your private notes for sensitive topics"
+          - "Task tracker for action items"
+      
+      follow_through:
+        critical: "If you say you'll do something, DO IT"
+        
+        examples:
+          - "You said you'll look into that bug → actually look into it"
+          - "You said you'll talk to other team about dependency → actually do it"
+          - "You said you'll find answer to their question → find the answer"
+        
+        if_you_forget: "You lose credibility. They stop bringing up issues because 'nothing happens anyway.'"
+        
+        system: "Track action items in task list. Review before each 1-on-1 to ensure you've done what you said."
+      
+      revisit_previous_topics:
+        why: "Shows you remember and care about things that matter to them"
+        
+        example: |
+          "Last time you mentioned struggling with work-life balance. How's that going 
+          this week? Did the changes we discussed help?"
+        
+        use_shared_doc: "Shared doc makes it easy to see what you discussed previously"
+  
+  # --------------------------------------------------------------------------
+  # Difficult Conversations in One-on-Ones
+  # --------------------------------------------------------------------------
+  
+  difficult_conversations:
+    
+    delivering_critical_feedback:
+      
+      when: "As soon as possible after you observe the issue, don't wait for 1-on-1"
+      
+      but_if_in_1_on_1:
+        structure:
+          observation: "Here's what I observed [specific behavior]"
+          impact: "Here's the impact [on team, project, others]"
+          expectation: "Here's what I expect instead"
+          support: "How can I help you improve this?"
+        
+        example: |
+          "In yesterday's code review, I noticed you dismissed Sarah's feedback pretty 
+          quickly without really engaging with her points. Sarah felt like her input 
+          wasn't valued, and she mentioned it to me. I need you to engage more 
+          thoughtfully with feedback, even when you disagree. Can you tell me your 
+          perspective? And how can we make sure this doesn't happen again?"
+      
+      what_not_to_do:
+        - "Don't use 'feedback sandwich' (positive-negative-positive) - it's dishonest and confusing"
+        - "Don't be vague ('you need to communicate better') - be specific"
+        - "Don't compare to other team members ('Sarah doesn't have this problem')"
+        - "Don't make it personal ('you're careless') - focus on behavior"
+    
+    receiving_difficult_feedback:
+      
+      they_give_you_feedback:
+        your_response: "Thank them. Take it seriously. Don't get defensive."
+        
+        good_response: |
+          "Thank you for telling me this. I really appreciate you being direct. Let me 
+          think about what you said. Can we talk more about this next time so I can 
+          understand better and figure out how to improve?"
+        
+        bad_response: |
+          "That's not really accurate. Let me explain why I do things that way..."
+          (This is defensive and will make them never give you feedback again)
+        
+        follow_up: "Actually change based on feedback. Show them their feedback matters."
+    
+    they_are_unhappy_or_frustrated:
+      
+      listen_first:
+        - "Let them vent if they need to"
+        - "Don't immediately try to fix or explain"
+        - "Acknowledge their feelings: 'I can see you're frustrated. That makes sense given [situation].'"
+      
+      understand_root_cause:
+        questions:
+          - "What's most frustrating about this?"
+          - "What would make this better?"
+          - "Is this an ongoing issue or specific to this situation?"
+      
+      problem_solve_together:
+        - "What can I do to help?"
+        - "What changes would make a difference?"
+        - "Let's figure this out together"
+      
+      if_you_cant_fix_it:
+        be_honest: "I hear you. Unfortunately I can't change [that policy/decision/situation] because [reason]. But here's what I can do..."
+    
+    they_want_to_quit:
+      
+      if_they_say_theyre_leaving:
+        
+        step_1_understand_why:
+          - "What's driving this decision?"
+          - "Is there anything that would change your mind?"
+          - "What would need to be different for you to stay?"
+        
+        step_2_evaluate:
+          - "Is this solvable? (compensation, role scope, team dynamics)"
+          - "Is this unsolvable? (want different career path, personal reasons, company stage)"
+        
+        step_3_respond_authentically:
+          
+          if_you_want_them_to_stay_and_can_address_concerns:
+            response: "I really don't want to lose you. Let me see what I can do about [specific concerns]. Give me 48 hours to figure this out."
+          
+          if_you_want_them_to_stay_but_cant_address_concerns:
+            response: "I understand why you're leaving given [concerns]. I wish I could change those things but I can't. I'll be sad to see you go but I support your decision. How can I help with your transition?"
+          
+          if_honestly_its_best_they_leave:
+            response: "I think you're making the right call. [New opportunity] sounds like a better fit for what you want. I'm happy to be a reference. Let's make the transition smooth."
+  
+  # --------------------------------------------------------------------------
+  # Skip-Level One-on-Ones
+  # --------------------------------------------------------------------------
+  
+  skip_level_one_on_ones:
+    
+    what_they_are: "Your manager meeting with your direct reports, without you present"
+    
+    purpose:
+      - "Your manager gets unfiltered perspective on team health"
+      - "Your reports feel heard at higher level"
+      - "Catch issues with your management that might not surface"
+      - "Build relationships across levels"
+    
+    frequency: "Quarterly or biannually"
+    
+    your_role:
+      
+      facilitate_them:
+        - "Proactively schedule skip-levels with your manager"
+        - "Tell your reports in advance: 'My manager will do skip-levels with everyone'"
+        - "Encourage them to be honest: 'This is their chance to share unfiltered feedback about me and the team'"
+      
+      dont_be_defensive:
+        - "Your manager will share themes (not individual feedback)"
+        - "Listen to feedback non-defensively"
+        - "Act on valid concerns"
+        - "Thank your manager for doing skip-levels"
+      
+      if_your_manager_doesnt_do_them:
+        request_them: "Ask your manager to do skip-levels. Explain it would help you improve."
+  
+  # --------------------------------------------------------------------------
+  # Common Mistakes and How to Avoid Them
+  # --------------------------------------------------------------------------
+  
+  common_mistakes:
+    
+    canceling_or_rescheduling_frequently:
+      problem: "Sends message: 'You're not a priority. Other things matter more.'"
+      impact: "Trust erodes. They stop bringing up issues. Relationship suffers."
+      fix: "Treat 1-on-1s as sacred. Reschedule your other meetings, not these."
+    
+    making_it_all_status_updates:
+      problem: "Wastes valuable time on information you could get asynchronously"
+      impact: "They see no value in 1-on-1s. Becomes box-checking exercise."
+      fix: "Start with 'I already know your status from Slack. What do YOU want to talk about?'"
+    
+    doing_all_the_talking:
+      problem: "You talk for 25 minutes, they get 5 minutes"
+      impact: "They feel unheard. You don't learn what's actually happening."
+      fix: "Force yourself to listen more. Count to 5 before responding. Ask questions instead of giving answers."
+    
+    not_taking_notes_or_following_up:
+      problem: "You forget what you discussed. Action items don't happen."
+      impact: "They stop sharing issues because nothing changes."
+      fix: "Take notes. Track action items. Review before next 1-on-1. Follow through."
+    
+    being_on_laptop_or_phone:
+      problem: "Distracted, not present, sends message they're not important"
+      impact: "They shut down. Conversations become superficial."
+      fix: "Close laptop. Put phone away. Give full attention. This is the most important meeting you have."
+    
+    only_talking_about_work:
+      problem: "Never ask about them as person - their life, interests, challenges"
+      impact: "Relationship remains transactional. No real trust or connection."
+      fix: "Ask about their life occasionally (but don't pry). Show you care about them as humans, not just workers."
+    
+    avoiding_difficult_topics:
+      problem: "Dance around issues, sugarcoat feedback, avoid conflict"
+      impact: "Problems fester. They don't improve because they don't know there's issue."
+      fix: "Be direct but kind. Address issues promptly. Difficult conversations get easier with practice."
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "1-on-1s are most important meeting you have - never cancel or reschedule unless emergency"
+    - "This is THEIR time, not yours - they set agenda, you listen and coach"
+    - "Weekly 30 min is standard - same time every week, never move it"
+    - "Listen 70%, talk 30% - you learn by listening, they benefit from being heard"
+    - "Not for status updates - get that async. 1-on-1s for coaching, feedback, career, blockers"
+    - "Be fully present - no laptop, no phone, full attention"
+    - "Take notes and follow through on action items - credibility depends on it"
+    - "Difficult conversations: be direct but kind, address issues promptly"
+    - "If they give you feedback about your management, thank them and actually change"
+    - "Common mistakes: canceling frequently, making it status updates, doing all talking, not following up"
+
+---
