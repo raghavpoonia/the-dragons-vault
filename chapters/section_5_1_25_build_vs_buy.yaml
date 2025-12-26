@@ -1,0 +1,491 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "25"
+  title: "Build vs Buy Decisions"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 6
+
+# ============================================================================
+# SECTION 25: BUILD VS BUY DECISIONS
+# ============================================================================
+
+build_vs_buy_decisions:
+  
+  philosophy: |
+    One of the most consequential decisions you'll make as security engineering leader: 
+    should we build this capability ourselves or buy a commercial/open-source solution? 
+    Get it wrong and you waste months of engineering time building something inferior 
+    to what exists, or spend $200K on tool that doesn't fit and sits unused.
+    
+    Default bias in security engineering is to build - we're engineers, we like building, 
+    and commercial security tools often suck. But building has hidden costs: maintenance, 
+    technical debt, opportunity cost. Your job is to make the rational decision, not the 
+    one that feels most satisfying to engineer ego.
+  
+  # --------------------------------------------------------------------------
+  # The Build vs Buy Framework
+  # --------------------------------------------------------------------------
+  
+  build_vs_buy_framework:
+    
+    when_to_buy:
+      
+      commodity_functionality:
+        definition: "Well-understood capability that many vendors offer, not differentiating"
+        
+        examples:
+          - "SIEM (log aggregation and search)"
+          - "EDR (endpoint detection and response)"
+          - "Vulnerability scanning"
+          - "CASB (cloud access security broker)"
+          - "Email security gateway"
+        
+        reasoning: "These are solved problems. Buying gives you 80% of what you need immediately. Building would take years and not be better."
+      
+      regulatory_or_compliance_requirement:
+        definition: "Need specific certifications or compliance that vendor provides"
+        
+        examples:
+          - "FedRAMP authorized solution for government customers"
+          - "SOC 2 Type II certified vendor"
+          - "PCI DSS compliant payment processing"
+        
+        reasoning: "Building yourself and getting certified is expensive and time-consuming. Buy certified solution."
+      
+      not_core_competency:
+        definition: "Outside your team's expertise or strategic focus"
+        
+        examples:
+          - "If you're detection team, don't build your own SIEM from scratch"
+          - "If you're application security team, don't build custom EDR"
+        
+        reasoning: "Focus your limited engineering time on what you're uniquely good at and what differentiates you."
+      
+      time_to_market_critical:
+        definition: "Need capability immediately, can't wait 6-12 months to build"
+        
+        examples:
+          - "Compliance deadline in 3 months"
+          - "Active threat that requires immediate detection capability"
+          - "Customer requirement for contract"
+        
+        reasoning: "Building takes too long. Buy now, potentially replace later if needed."
+      
+      total_cost_of_ownership_favors_buying:
+        calculation: "Commercial tool $100K/year vs 2 engineers building and maintaining $300K/year"
+        
+        reasoning: "Engineers are expensive. If buying is cheaper than 0.5-1 FTE to build and maintain, buy."
+    
+    when_to_build:
+      
+      unique_or_differentiating_capability:
+        definition: "This is your competitive advantage, no one else does it like you need"
+        
+        examples:
+          - "Detection-as-code platform tailored to your workflow"
+          - "Custom threat intelligence pipeline for your specific threats"
+          - "Security automation that integrates deeply with your unique infrastructure"
+        
+        reasoning: "This is what makes you better than other security teams. Worth the investment."
+      
+      no_good_commercial_option:
+        definition: "Vendors don't solve the problem or solve it badly"
+        
+        examples:
+          - "Very new or niche security problem"
+          - "Vendor solutions exist but are immature or don't fit your needs"
+          - "Open source options exist but need heavy customization"
+        
+        reasoning: "If buying gets you only 30% of what you need and costs $200K, building might be better."
+      
+      vendor_lock_in_risk_too_high:
+        definition: "Proprietary format/API, impossible to migrate off, vendor has you hostage"
+        
+        examples:
+          - "Detection rules in vendor-specific language that can't be exported"
+          - "Data locked in proprietary format"
+          - "APIs so limited you can't get your data out"
+        
+        reasoning: "Strategic liability. Building gives you control and portability."
+      
+      cost_at_scale_prohibitive:
+        definition: "Vendor pricing scales linearly but your usage will grow exponentially"
+        
+        examples:
+          - "SIEM charging per GB ingested when you'll go from 1TB to 100TB"
+          - "Detection platform charging per detection when you'll have 1000+"
+          - "API charges that will be $1M+ at your scale"
+        
+        calculation: |
+          Year 1: Vendor $100K vs Build $300K → Buy
+          Year 3: Vendor $1M vs Build $300K (maintenance only) → Build
+        
+        reasoning: "If 3-5 year TCO strongly favors building due to scale, build."
+      
+      you_have_engineering_capacity:
+        definition: "Team has bandwidth and skills to build and maintain this"
+        
+        reality_check:
+          - "Do you actually have 1-2 engineers to dedicate for 6-12 months?"
+          - "What are they not working on if they build this?"
+          - "Can you maintain this for 3-5 years?"
+        
+        reasoning: "Building is only option if you have capacity. If team is maxed out, buy to free up time."
+  
+  # --------------------------------------------------------------------------
+  # The Hidden Costs of Building
+  # --------------------------------------------------------------------------
+  
+  hidden_costs_of_building:
+    
+    development_time:
+      
+      initial_build:
+        typical_timeline: "6-12 months for non-trivial system"
+        
+        example:
+          detection_platform: "9 months with 2 engineers full-time"
+          cost: "2 engineers × $150K fully loaded × 0.75 years = $225K"
+      
+      opportunity_cost:
+        what_they_could_have_done_instead:
+          - "Built 100 new detections"
+          - "Improved existing detection quality"
+          - "Reduced false positive rate"
+          - "Integrated new data sources"
+        
+        question: "Is the platform worth more than those alternatives?"
+    
+    maintenance_and_operations:
+      
+      ongoing_costs:
+        - "Bug fixes and reliability improvements"
+        - "Feature requests from users"
+        - "Keeping up with dependencies and security patches"
+        - "Documentation and training new team members"
+        - "On-call for when it breaks"
+      
+      typical_ongoing: "0.25-0.5 FTE per year for non-trivial system"
+      
+      example: "Detection platform requires 1 engineer spending 25% of time on maintenance = $37.5K/year"
+      
+      reality: "Systems don't maintain themselves. Someone owns this forever or it rots."
+    
+    technical_debt:
+      
+      what_happens_over_time:
+        - "Code becomes legacy as team members leave"
+        - "Technologies age and need upgrading"
+        - "Scale issues emerge as usage grows"
+        - "Security vulnerabilities in dependencies"
+      
+      eventual_rewrite: "Many internal tools need major rewrite every 3-5 years"
+      
+      cost: "Potentially another 6-12 month project to rebuild"
+    
+    quality_and_features:
+      
+      reality_check:
+        - "Your internal tool will not be as good as commercial tool's primary product"
+        - "Commercial vendors have 50+ engineers working on their product"
+        - "You have 2 engineers working on yours part-time"
+        - "Your tool will be 70% as good at best"
+      
+      feature_gap:
+        - "No UI (command-line only)"
+        - "Minimal documentation"
+        - "No customer support"
+        - "Missing nice-to-have features"
+        - "Rough edges everywhere"
+      
+      user_experience: "Internal tools often have terrible UX because engineering-focused, not user-focused"
+    
+    knowledge_concentration:
+      
+      bus_factor_risk:
+        problem: "Only 1-2 people understand the system"
+        
+        what_happens_when_they_leave:
+          - "No one knows how to maintain it"
+          - "System becomes black box"
+          - "Eventually abandoned and rewritten or replaced"
+        
+        mitigation: "Documentation, knowledge sharing, multiple owners - but this takes time too"
+  
+  # --------------------------------------------------------------------------
+  # Making the Decision
+  # --------------------------------------------------------------------------
+  
+  making_the_decision:
+    
+    decision_matrix:
+      
+      score_each_factor:
+        factors:
+          - "Is this differentiating capability? (Build +3, Buy -3)"
+          - "Do good commercial options exist? (Build -3, Buy +3)"
+          - "Do we have engineering capacity? (Build +2, Buy -2)"
+          - "Is time-to-market critical? (Build -2, Buy +2)"
+          - "Is vendor lock-in high risk? (Build +2, Buy -2)"
+          - "Does cost at scale favor building? (Build +2, Buy -2)"
+          - "Is this commodity functionality? (Build -2, Buy +2)"
+        
+        scoring:
+          - "Add up scores"
+          - "Positive = Build"
+          - "Negative = Buy"
+          - "Close to zero = Dig deeper or try hybrid"
+      
+      example_detection_platform:
+        differentiating: "+3 (this is our core capability)"
+        commercial_options: "-1 (some exist but don't fit our workflow)"
+        engineering_capacity: "+2 (we have 2 engineers available)"
+        time_to_market: "+0 (not urgent, 9 months is acceptable)"
+        vendor_lock_in: "+2 (proprietary detection languages are risky)"
+        cost_at_scale: "+2 (will have 1000+ detections, vendor would charge per detection)"
+        commodity: "-1 (somewhat commoditized but with customization needs)"
+        
+        total: "+7 → Build"
+      
+      example_siem:
+        differentiating: "-3 (log aggregation is not our competitive advantage)"
+        commercial_options: "+3 (Splunk, Elastic, Datadog, many good options)"
+        engineering_capacity: "-2 (building SIEM would take 5+ engineers)"
+        time_to_market: "+2 (need it immediately)"
+        vendor_lock_in: "-1 (can migrate between SIEMs with effort)"
+        cost_at_scale: "-2 (expensive but still cheaper than building)"
+        commodity: "+2 (completely commoditized)"
+        
+        total: "-1 → Buy"
+    
+    prototype_first:
+      
+      concept: "Build quick prototype (2-4 weeks) before committing to full build"
+      
+      what_prototype_validates:
+        - "Is this technically feasible?"
+        - "Can we actually build this with our skills?"
+        - "What are the hard problems we'll face?"
+        - "Do users actually want this?"
+      
+      example: |
+        Before committing 9 months to detection platform, spend 4 weeks building:
+        - Basic Git workflow for detection rules
+        - Simple CI/CD pipeline to deploy to dev environment
+        - Prototype UI or API
+        
+        Demo to team and SOC. Get feedback. Adjust scope or decide to buy instead.
+      
+      outcome: "Either validate approach or discover it's harder than expected and pivot to buying"
+    
+    hybrid_approaches:
+      
+      buy_and_customize:
+        what: "Buy commercial tool, extend with APIs or plugins"
+        
+        example: "Buy Splunk for SIEM, build custom detection framework on top using Splunk APIs"
+        
+        when_this_works: "When vendor has good APIs and 70% of what you need out-of-box"
+      
+      open_source_and_customize:
+        what: "Use open-source tool, fork and customize for your needs"
+        
+        example: "Use open-source Sigma for detection language, build platform around it"
+        
+        when_this_works: "When open-source gets you 60% of the way and you can contribute back"
+        
+        warning: "Forking open source means you now maintain your fork. Stay on mainline if possible."
+      
+      buy_multiple_and_orchestrate:
+        what: "Buy best-in-breed tools, build orchestration/automation layer on top"
+        
+        example: "Buy EDR, SIEM, SOAR separately. Build automation that ties them together."
+        
+        when_this_works: "When orchestration is your differentiator, not the individual tools"
+  
+  # --------------------------------------------------------------------------
+  # Vendor Evaluation Process
+  # --------------------------------------------------------------------------
+  
+  vendor_evaluation_process:
+    
+    define_requirements:
+      
+      must_haves:
+        - "Core functionality required"
+        - "Integration requirements"
+        - "Performance requirements"
+        - "Security and compliance requirements"
+      
+      nice_to_haves:
+        - "Features that would be valuable but not blocking"
+        - "Prioritized 1-5 scale"
+      
+      example_detection_platform_requirements:
+        must_haves:
+          - "Supports detection-as-code in Git"
+          - "CI/CD integration"
+          - "Deploys to Splunk and Elastic"
+          - "Sub-1-hour deployment time"
+          - "API for programmatic access"
+        
+        nice_to_haves:
+          - "Built-in testing framework (5 = very important)"
+          - "UI for detection management (3 = somewhat important)"
+          - "Integration with MITRE ATT&CK (4 = important)"
+    
+    shortlist_vendors:
+      
+      sources:
+        - "Gartner Magic Quadrant (with skepticism - pay-to-play)"
+        - "Peer recommendations (most valuable)"
+        - "Conference vendors"
+        - "Analyst reports"
+        - "Online research and reviews"
+      
+      initial_filter:
+        - "Review website and marketing materials"
+        - "Check if they meet must-have requirements"
+        - "Pricing ballpark (can you afford it?)"
+        - "Company viability (will they be around in 3 years?)"
+      
+      shortlist: "3-5 vendors for deeper evaluation"
+    
+    hands_on_evaluation:
+      
+      proof_of_concept:
+        duration: "2-4 weeks per vendor"
+        
+        what_to_test:
+          - "Real use cases with real data"
+          - "Integration with your systems"
+          - "Performance at your scale"
+          - "Usability with your team"
+        
+        who_tests: "Actual users (SOC analysts, detection engineers), not just you"
+      
+      scoring_rubric:
+        criteria:
+          - "Meets must-have requirements (pass/fail)"
+          - "Nice-to-have features (weighted score)"
+          - "Ease of use (user feedback)"
+          - "Performance (quantitative metrics)"
+          - "Integration quality"
+          - "Documentation quality"
+          - "Support responsiveness"
+        
+        example: |
+          Vendor A:
+          - Must-haves: Pass (8/8)
+          - Nice-to-haves: 38/50
+          - Ease of use: 4.2/5 (user survey)
+          - Performance: 15 detections/second
+          - Integration: Good APIs, some gaps
+          - Documentation: Excellent
+          - Support: Responsive in POC
+          
+          Total score: 82/100
+    
+    commercial_evaluation:
+      
+      pricing_models:
+        common_models:
+          - "Per user (e.g., $100/user/month)"
+          - "Per data volume (e.g., $500/GB ingested)"
+          - "Per entity (e.g., $10/endpoint/month)"
+          - "Flat rate (e.g., $100K/year unlimited)"
+        
+        watch_for:
+          - "What happens when you grow 10x? Pricing still work?"
+          - "Hidden costs (implementation, training, support)"
+          - "Lock-in penalties or long-term contracts"
+      
+      contract_negotiation:
+        - "Multi-year discount (20-30% off for 3-year commit)"
+        - "Volume discounts if applicable"
+        - "Proof-of-concept period before commitment"
+        - "Exit clauses (can you terminate if it doesn't work out?)"
+        - "SLA guarantees and penalties"
+      
+      total_cost_of_ownership:
+        include:
+          - "Licensing costs"
+          - "Implementation and setup (internal time + consulting)"
+          - "Training"
+          - "Ongoing operational costs"
+          - "Support costs"
+        
+        example: |
+          Vendor license: $150K/year
+          Implementation: $50K (consulting + 1 engineer for 3 months)
+          Training: $10K
+          Ongoing ops: $30K/year (0.2 FTE)
+          
+          Year 1 TCO: $240K
+          Year 2-3 TCO: $180K/year
+  
+  # --------------------------------------------------------------------------
+  # Common Mistakes
+  # --------------------------------------------------------------------------
+  
+  common_mistakes:
+    
+    not_invented_here_syndrome:
+      problem: "Engineers want to build everything because buying feels like admitting defeat"
+      
+      symptoms:
+        - "Rejecting commercial tools because 'we could build that'"
+        - "Building yet another internal tool when good options exist"
+        - "Wasting engineering time on non-differentiating work"
+      
+      fix: "Discipline - focus building on what actually differentiates you"
+    
+    building_before_validating_need:
+      problem: "Build elaborate tool no one actually wants or uses"
+      
+      example: "Spend 12 months building detection platform, SOC team prefers existing workflow"
+      
+      fix: "Prototype, get user feedback, validate demand before committing"
+    
+    underestimating_maintenance:
+      problem: "Think building is one-time effort, forget ongoing maintenance"
+      
+      reality: "Every system you build becomes permanent maintenance burden"
+      
+      fix: "Account for 0.25-0.5 FTE ongoing per non-trivial system in TCO calculation"
+    
+    buying_without_poc:
+      problem: "Sign 3-year contract based on sales demo, discover tool doesn't work for you"
+      
+      example: "Buy $300K SOAR platform, team finds it too complex, sits unused"
+      
+      fix: "Always do hands-on POC with real users and real data before committing"
+    
+    optimizing_for_cost_only:
+      problem: "Choose cheapest option, ignore quality and fit"
+      
+      example: "Buy $50K tool instead of $150K tool to save money, spend $100K in engineering time making it work"
+      
+      fix: "Optimize for total cost of ownership including your team's time, not just sticker price"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Buy when: commodity functionality, compliance requirement, not core competency, time-to-market critical, TCO favors buying"
+    - "Build when: unique/differentiating capability, no good commercial options, vendor lock-in risk too high, cost at scale prohibitive, have engineering capacity"
+    - "Hidden costs of building: development time (6-12 months), maintenance (0.25-0.5 FTE/year), technical debt, feature gaps, knowledge concentration"
+    - "Decision matrix: score factors (differentiating, commercial options, capacity, time, lock-in, scale, commodity), positive = build, negative = buy"
+    - "Prototype first: 2-4 weeks to validate feasibility and user demand before committing to full build"
+    - "Hybrid approaches: buy and customize, open-source and extend, buy multiple and orchestrate"
+    - "Vendor evaluation: define requirements, shortlist 3-5 vendors, hands-on POC with real users, score objectively, negotiate contract"
+    - "Common mistakes: not-invented-here syndrome, building without validating need, underestimating maintenance, buying without POC, optimizing for cost only"
+    - "Default should be buy unless clear reasons to build - engineers are expensive, focus their time on differentiating work"
+    - "Question to ask: 'In 3 years, will we regret this decision?' If building, can we maintain it? If buying, can we afford scale?"
+
+---
