@@ -1,0 +1,562 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "21"
+  title: "Scaling from 5 to 15 People"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 7
+
+# ============================================================================
+# SECTION 21: SCALING FROM 5 TO 15 PEOPLE
+# ============================================================================
+
+scaling_5_to_15_people:
+  
+  philosophy: |
+    Managing 5 people is fundamentally different from managing 15. At 5 people, you can 
+    know everything happening on the team, be involved in all decisions, and maintain 
+    direct relationships with everyone. At 15 people, this breaks down. You need 
+    structure, delegation, and leadership layers. Many managers fail at this transition.
+    
+    The transition from 5 to 15 people forces you to: introduce management layers (tech 
+    leads or managers), systematize processes, delegate decision-making, and accept you 
+    can't be involved in everything. This is uncomfortable but necessary for scale.
+  
+  # --------------------------------------------------------------------------
+  # Why 5 to 15 is a Critical Transition
+  # --------------------------------------------------------------------------
+  
+  why_this_transition_matters:
+    
+    what_breaks_at_10_plus:
+      
+      communication_overhead:
+        at_5_people:
+          - "10 possible 1-on-1 relationships (n*(n-1)/2 = 5*4/2 = 10)"
+          - "Team can communicate directly with everyone"
+          - "Information flows naturally"
+        
+        at_15_people:
+          - "105 possible relationships (15*14/2 = 105)"
+          - "10x increase in communication complexity"
+          - "Information silos form naturally"
+          - "Chinese telephone game - information corrupts as it passes through people"
+        
+        result: "You need explicit communication structure and processes"
+      
+      manager_capacity:
+        at_5_people:
+          - "Weekly 30-min 1-on-1s = 2.5 hours per week"
+          - "Know what everyone is working on"
+          - "Can review most technical work"
+          - "Can be involved in most decisions"
+        
+        at_15_people:
+          - "Weekly 30-min 1-on-1s = 7.5 hours per week"
+          - "Impossible to know all details"
+          - "Can't review all work or be in all decisions"
+          - "Must delegate or become bottleneck"
+        
+        result: "You need to introduce leadership layers and delegate"
+      
+      decision_making:
+        at_5_people:
+          - "Consensus or manager decision works fine"
+          - "5 people can discuss and align quickly"
+          - "Everyone's voice can be heard"
+        
+        at_15_people:
+          - "Consensus is impossible - too many opinions"
+          - "Meetings with 15 people are useless"
+          - "People feel unheard if every decision requires everyone"
+        
+        result: "You need clear decision-making framework and delegation"
+      
+      culture:
+        at_5_people:
+          - "Culture emerges organically"
+          - "Team cohesion is natural"
+          - "Everyone knows everyone well"
+        
+        at_15_people:
+          - "Subgroups and cliques form"
+          - "New people don't integrate as easily"
+          - "Culture dilutes without intentional reinforcement"
+        
+        result: "You need to actively maintain and reinforce culture"
+    
+    common_failure_modes:
+      
+      the_bottleneck:
+        what: "Manager tries to stay involved in everything as team grows"
+        
+        symptoms:
+          - "You're working 60-70 hour weeks"
+          - "Team waits days for your review or approval"
+          - "Projects stall waiting for you"
+          - "You're exhausted and team is frustrated"
+        
+        outcome: "You burn out. Team velocity collapses. People quit."
+      
+      the_abdicator:
+        what: "Manager throws up hands and stops managing as complexity grows"
+        
+        symptoms:
+          - "You're rarely available"
+          - "Don't know what team is working on"
+          - "Avoid difficult decisions or conversations"
+          - "Team directionless and chaotic"
+        
+        outcome: "Team loses direction. Good people leave. Performance suffers."
+      
+      the_micromanager:
+        what: "Manager tries to control everything as team grows to maintain control"
+        
+        symptoms:
+          - "You're in every meeting, reviewing every decision"
+          - "Team can't make any decisions without you"
+          - "You're prescribing implementation details"
+          - "Team frustrated and infantilized"
+        
+        outcome: "Team stops thinking for themselves. Best people leave. You're drowning."
+  
+  # --------------------------------------------------------------------------
+  # Introducing Tech Leads
+  # --------------------------------------------------------------------------
+  
+  introducing_tech_leads:
+    
+    what_is_tech_lead:
+      definition: "Senior engineer who provides technical leadership for part of team or area, without people management"
+      
+      not_a_manager:
+        - "No 1-on-1s or performance reviews"
+        - "No hiring/firing authority"
+        - "No budget or headcount decisions"
+      
+      is_technical_leader:
+        - "Makes technical decisions for their area"
+        - "Represents area in cross-team discussions"
+        - "Mentors engineers in their area"
+        - "Ensures quality and consistency"
+    
+    when_to_introduce_tech_leads:
+      
+      team_size_trigger: "Around 8-10 people, definitely by 12"
+      
+      signs_you_need_tech_leads:
+        - "You can't review all technical decisions anymore"
+        - "Different areas of work need different expertise"
+        - "Senior engineers ready for leadership opportunity"
+        - "Technical coordination becoming bottleneck"
+    
+    how_to_structure_tech_leads:
+      
+      by_domain:
+        structure: "Tech lead for detection, tech lead for platform, tech lead for IR tooling"
+        
+        when_this_works: "When team has distinct technical areas that require specialized expertise"
+        
+        example:
+          detection_tech_lead:
+            - "Owns detection engineering standards and quality"
+            - "Reviews all detection PRs"
+            - "Makes decisions on detection approach"
+            - "Mentors detection engineers"
+          
+          platform_tech_lead:
+            - "Owns platform architecture and roadmap"
+            - "Reviews infrastructure and tooling changes"
+            - "Evaluates build-vs-buy for tooling"
+            - "Mentors platform engineers"
+      
+      by_project:
+        structure: "Different tech lead for each major project"
+        
+        when_this_works: "When team organized by projects rather than domains"
+        
+        rotation: "Tech lead role can rotate as projects change"
+      
+      hybrid:
+        structure: "Domain tech leads + project leads for large initiatives"
+        
+        when_this_works: "Larger teams (12-15) with both stable domains and large projects"
+    
+    selecting_tech_leads:
+      
+      who_should_be_tech_lead:
+        technical_excellence:
+          - "Deep expertise in domain"
+          - "Makes good technical decisions"
+          - "Writes high-quality code"
+        
+        leadership_potential:
+          - "Others naturally come to them for help"
+          - "Good communicator and teacher"
+          - "Can influence without authority"
+          - "Takes ownership and drives results"
+        
+        judgement:
+          - "Makes good trade-offs"
+          - "Knows when to be pragmatic vs perfect"
+          - "Escalates appropriately"
+      
+      who_should_not_be_tech_lead:
+        - "Brilliant jerk (great technically but poor with people)"
+        - "Perfectionist who can't ship"
+        - "Person who hoards knowledge instead of sharing"
+        - "Someone who wants management track (tech lead is wrong path)"
+    
+    empowering_tech_leads:
+      
+      define_authority_clearly:
+        tech_lead_decides:
+          - "Technical approach for their area"
+          - "Code quality standards and enforcement"
+          - "Technical trade-offs within their domain"
+          - "Day-to-day technical priorities"
+        
+        manager_decides:
+          - "Roadmap and strategic priorities"
+          - "Cross-domain architectural decisions"
+          - "Hiring and personnel decisions"
+          - "Budget and resourcing"
+        
+        must_collaborate:
+          - "Cross-team technical decisions"
+          - "Changes that affect other areas"
+          - "Major architectural shifts"
+      
+      support_them:
+        - "Give them visibility - mention them in meetings, give credit publicly"
+        - "Defer to their expertise publicly: 'That's Alice's area, let's ask her'"
+        - "Back their decisions unless truly problematic"
+        - "Provide coaching on leadership and communication"
+        - "Don't undermine them by overriding their decisions"
+      
+      develop_them:
+        - "Tech lead is training ground for senior IC or management track"
+        - "Give them stretch opportunities (leading cross-team initiatives)"
+        - "Provide feedback on their leadership, not just technical work"
+        - "Connect them with other tech leads at company"
+  
+  # --------------------------------------------------------------------------
+  # Adding a Second Manager
+  # --------------------------------------------------------------------------
+  
+  adding_second_manager:
+    
+    when_to_split_into_two_teams:
+      
+      team_size_trigger: "Around 12-15 people, you need second manager"
+      
+      signs_you_need_to_split:
+        - "You can't do quality 1-on-1s with everyone"
+        - "Clear subgroups that work independently"
+        - "Different skill sets or focuses (detection vs IR vs platform)"
+        - "You have someone ready to be manager"
+      
+      dont_split_too_early:
+        - "Before 10 people, usually premature"
+        - "Overhead of coordination between managers"
+        - "Smaller teams are less efficient individually"
+    
+    how_to_split_the_team:
+      
+      by_domain:
+        structure: "Detection team + Platform team"
+        
+        when_this_works: "Clear domain boundaries, different skill sets, mostly independent work"
+        
+        example:
+          detection_team: "7 engineers focused on writing detections"
+          platform_team: "5 engineers focused on detection infrastructure and tooling"
+      
+      by_product_or_customer:
+        structure: "Cloud security team + Endpoint security team"
+        
+        when_this_works: "Serving different customers or product areas"
+      
+      by_experience_level:
+        structure: "Advanced team + Core team"
+        
+        when_this_works: "AVOID THIS - creates tier system and resentment"
+        
+        why_bad: "People on 'core team' feel second-class, creates politics"
+    
+    selecting_second_manager:
+      
+      internal_promotion_vs_external_hire:
+        
+        internal_promotion:
+          pros:
+            - "Knows team, culture, systems"
+            - "Team trusts them already"
+            - "Career development for team member"
+            - "Faster ramp-up"
+          
+          cons:
+            - "No management experience"
+            - "Requires training and mentorship from you"
+            - "Peer relationships become manager-report relationships"
+          
+          when_to_do: "If you have strong tech lead or senior engineer ready and willing"
+        
+        external_hire:
+          pros:
+            - "Comes with management experience"
+            - "Fresh perspective"
+            - "Can scale faster"
+          
+          cons:
+            - "Long ramp-up (6-12 months)"
+            - "May not fit culture"
+            - "Hiring manager is hard - takes 3-6 months"
+          
+          when_to_do: "If no one internal is ready or willing, or team needs expertise you don't have"
+      
+      criteria_for_internal_promotion:
+        - "Strong performer (meets or exceeds expectations)"
+        - "Interest in management (not just 'only path to promotion')"
+        - "Leadership demonstrated (tech lead, mentoring, project leadership)"
+        - "Good judgment and interpersonal skills"
+        - "Coachable and eager to learn management"
+    
+    transitioning_peer_to_manager:
+      
+      challenges:
+        - "Former peers now report to them"
+        - "Social dynamics change"
+        - "They might struggle with authority"
+        - "Resentment if others wanted the role"
+      
+      how_to_support:
+        
+        announce_clearly:
+          what_to_say: |
+            "Alice is becoming manager for the detection team. She'll be leading the 
+            detection roadmap, doing 1-on-1s with detection engineers, and making 
+            decisions for that team. I'll be working closely with her as she transitions 
+            into this role.
+            
+            This doesn't mean she's 'better' than anyone else - we just need management 
+            structure as we grow. Alice has shown strong leadership and is excited about 
+            this opportunity. Please support her in this transition."
+        
+        coach_them_intensively:
+          - "Weekly 1-on-1s focused on management coaching"
+          - "Share this document and other management resources"
+          - "Be available for questions and advice"
+          - "Debrief difficult situations with them"
+        
+        be_patient:
+          - "They'll make mistakes - that's normal"
+          - "First 6 months will be awkward"
+          - "Some team members will test boundaries"
+          - "They'll learn and improve"
+  
+  # --------------------------------------------------------------------------
+  # Systematic Processes
+  # --------------------------------------------------------------------------
+  
+  systematic_processes:
+    
+    why_you_need_processes:
+      at_5_people: "Processes feel like bureaucracy - everyone knows what to do"
+      at_15_people: "Without processes, chaos - different people doing things differently, information lost, quality inconsistent"
+    
+    key_processes_to_establish:
+      
+      work_intake_and_prioritization:
+        problem_without_process: "Everyone doing whatever they think is important, no alignment, constant interruptions"
+        
+        solution:
+          - "Single backlog for all work"
+          - "Clear prioritization criteria"
+          - "Defined process for requesting work from team"
+          - "You and tech leads prioritize together"
+        
+        example_process: |
+          All work requests go in Jira with priority and justification.
+          Weekly prioritization meeting with tech leads.
+          Priority: P0 (critical/security), P1 (high/roadmap), P2 (nice-to-have).
+          Team pulls from top of prioritized backlog.
+      
+      code_review_and_quality:
+        problem_without_process: "Inconsistent quality, things slip through, no one knows who should review"
+        
+        solution:
+          - "All code must be reviewed before merge"
+          - "Tech leads or senior engineers review architecture"
+          - "Automated checks (tests, linting) must pass"
+          - "Clear definition of 'done'"
+        
+        example_standards: |
+          Every detection must have:
+          - Unit tests (positive and negative cases)
+          - Integration test with sample data
+          - Documentation (what it detects, FP rate, investigation steps)
+          - Approved by tech lead or senior engineer
+          - All CI checks passing
+      
+      incident_response_and_escalation:
+        problem_without_process: "Chaos during incidents, unclear who's doing what, information scattered"
+        
+        solution:
+          - "Clear escalation path"
+          - "Defined roles (incident commander, technical lead, communications)"
+          - "Standard communication channels (war room Slack, incident doc)"
+          - "Postmortem process"
+      
+      knowledge_management:
+        problem_without_process: "Knowledge in people's heads, new people struggle, repeated questions"
+        
+        solution:
+          - "Wiki or docs site with standard templates"
+          - "Runbooks for common operations"
+          - "Architecture decision records (ADRs)"
+          - "Onboarding documentation"
+          - "Require documentation for major projects"
+      
+      change_management:
+        problem_without_process: "Breaking changes deployed without notice, surprises, finger-pointing"
+        
+        solution:
+          - "Announce changes in advance"
+          - "Communication plan for changes affecting others"
+          - "Rollback plan for risky changes"
+          - "Gradual rollout for major changes"
+  
+  # --------------------------------------------------------------------------
+  # Communication at Scale
+  # --------------------------------------------------------------------------
+  
+  communication_at_scale:
+    
+    information_flow_challenges:
+      
+      information_silos:
+        problem: "Detection team doesn't know what platform team is doing, duplication or misalignment"
+        
+        solution:
+          - "Weekly all-hands team meeting"
+          - "Shared Slack channels for announcements"
+          - "Team wiki or docs site"
+          - "Cross-team demo days"
+      
+      information_overload:
+        problem: "Too many Slack channels, too much noise, people tune out"
+        
+        solution:
+          - "Consolidate to essential channels"
+          - "Clear purpose for each channel"
+          - "Use threading to reduce noise"
+          - "Important announcements in dedicated channel"
+      
+      chinese_telephone:
+        problem: "Information corrupts as it passes through people"
+        
+        solution:
+          - "Write things down instead of verbal-only"
+          - "Link to source of truth, don't re-explain"
+          - "Repeat key messages in multiple forums"
+    
+    communication_mechanisms:
+      
+      weekly_team_meeting:
+        purpose: "Align on priorities, share wins, discuss topics affecting whole team"
+        
+        structure:
+          - "Announcements (5 min)"
+          - "Wins and demos (15 min)"
+          - "Deep dive topic (30 min)"
+          - "Q&A and discussion (10 min)"
+        
+        frequency: "Weekly, 60 minutes"
+      
+      tech_lead_sync:
+        purpose: "Align tech leads on cross-cutting decisions and priorities"
+        
+        participants: "You + all tech leads"
+        
+        frequency: "Weekly, 30 minutes"
+        
+        topics:
+          - "Cross-team dependencies"
+          - "Technical standards and decisions"
+          - "Staffing and priorities"
+          - "Risks and blockers"
+      
+      written_updates:
+        purpose: "Asynchronous information sharing"
+        
+        examples:
+          - "Weekly team update (you write)"
+          - "Monthly metrics review"
+          - "Quarterly roadmap updates"
+          - "Project status in shared docs"
+  
+  # --------------------------------------------------------------------------
+  # Maintaining Culture
+  # --------------------------------------------------------------------------
+  
+  maintaining_culture:
+    
+    culture_at_5_vs_15:
+      at_5_people: "Culture emerges naturally from tight-knit group"
+      at_15_people: "Culture dilutes and fragments without intentional reinforcement"
+    
+    active_culture_maintenance:
+      
+      define_team_values_explicitly:
+        why: "Can't rely on osmosis - need to articulate what you stand for"
+        
+        example_values:
+          - "Learning and growth: We prioritize learning, we share knowledge"
+          - "Quality over speed: We'd rather ship it right than ship it fast"
+          - "Ownership: We own our work end-to-end, including quality and ops"
+          - "Collaboration: We help each other succeed"
+        
+        how_to_reinforce:
+          - "Talk about values in team meetings"
+          - "Recognize people who exemplify values"
+          - "Make decisions aligned with values"
+          - "Hire for values fit"
+      
+      onboarding_is_culture_transmission:
+        - "First impression sets expectations"
+        - "Buddy system to integrate new person"
+        - "Explicit teaching of 'how we do things here'"
+        - "Don't assume they'll figure it out"
+      
+      social_connection:
+        - "Team lunches or offsites"
+        - "Slack channels for non-work chat"
+        - "Celebrate birthdays, milestones"
+        - "Create space for people to connect as humans"
+      
+      address_culture_violations:
+        - "When someone violates values, address immediately"
+        - "Don't let toxic behavior slide because they're productive"
+        - "Fire fast if someone is culture poison"
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "5 to 15 people is critical transition - what worked at 5 breaks at 15 due to communication overhead and manager capacity"
+    - "Common failure modes: bottleneck (try to stay in everything), abdicator (give up managing), micromanager (control everything)"
+    - "Introduce tech leads at 8-10 people: senior engineers who provide technical leadership without people management"
+    - "Tech leads decide: technical approach, quality standards, day-to-day priorities in their domain"
+    - "Add second manager at 12-15 people: split team by domain, promote internal tech lead or hire external"
+    - "Establish systematic processes: work intake, code review, incident response, knowledge management, change management"
+    - "Communication at scale: weekly team meeting, tech lead sync, written updates, clear channels and documentation"
+    - "Maintain culture actively: define values explicitly, onboarding as culture transmission, social connection, address violations"
+    - "You must delegate decision-making and accept you can't be involved in everything - this is uncomfortable but necessary"
+    - "Tech lead role is training ground for senior IC or management track - invest in developing them as leaders"
+
+---
