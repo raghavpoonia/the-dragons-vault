@@ -1,0 +1,687 @@
+---
+document_info:
+  chapter: "5.1"
+  section: "11"
+  title: "Performance Management"
+  version: "1.0.0"
+  author: "Raghav Dinesh"
+  github: "github.com/raghavpoonia"
+  license: "MIT"
+  estimated_pages: 8
+
+# ============================================================================
+# SECTION 11: PERFORMANCE MANAGEMENT
+# ============================================================================
+
+performance_management:
+  
+  philosophy: |
+    Performance management is not an annual event - it's a continuous process of goal 
+    setting, feedback, coaching, and development. The annual review is just a summary 
+    of conversations you've been having all year. If the performance review contains 
+    surprises, you've failed as a manager.
+    
+    Done well, performance management helps people grow, aligns work with impact, and 
+    creates accountability. Done poorly, it's bureaucratic box-checking that creates 
+    anxiety and resentment.
+  
+  # --------------------------------------------------------------------------
+  # Performance Review Cycle
+  # --------------------------------------------------------------------------
+  
+  performance_review_cycle:
+    
+    typical_annual_cycle:
+      
+      q1_january_march:
+        activity: "Set annual goals collaboratively with each person"
+        timing: "First 2-3 weeks of Q1"
+        
+        process:
+          - "Employee drafts goals based on team roadmap and their development areas"
+          - "Manager reviews and refines with them"
+          - "Align on 3-5 goals for the year with clear metrics"
+          - "Document in performance management system"
+      
+      q2_april_june:
+        activity: "Mid-year check-in on goals and performance"
+        timing: "End of Q2"
+        
+        process:
+          - "Review progress on annual goals (on track? needs adjustment?)"
+          - "Provide feedback on first half performance"
+          - "Adjust goals if priorities have changed"
+          - "Identify any performance concerns early"
+        
+        importance: "Catch issues at 6 months, not 12 months when it's too late to fix"
+      
+      q3_july_september:
+        activity: "Performance tracking and informal feedback"
+        timing: "Throughout Q3"
+        
+        process:
+          - "Continue regular 1-on-1s with ongoing feedback"
+          - "Track examples of great work and areas for improvement"
+          - "No formal review, just continuous coaching"
+      
+      q4_october_december:
+        activity: "Annual performance review"
+        timing: "Usually November/December"
+        
+        process:
+          week_1: "Send self-review template to employees"
+          week_2: "Collect peer feedback (360 reviews if your company does them)"
+          week_3: "Manager writes performance reviews"
+          week_4: "Calibration meetings with other managers"
+          week_5: "Deliver reviews to employees in 1-on-1s"
+        
+        note: "Timeline compresses around holidays - start early"
+    
+    continuous_feedback_model:
+      
+      philosophy: "Don't save feedback for annual review - give it continuously"
+      
+      real_time_feedback:
+        when: "Within 24-48 hours of observing something (good or concerning)"
+        what: "Specific behavior or action, impact, what to keep doing or change"
+        where: "1-on-1, Slack DM, or quick hallway conversation depending on urgency and sensitivity"
+      
+      monthly_informal_check_ins:
+        what: "Brief conversation about how things are going overall"
+        questions:
+          - "How are you feeling about your work?"
+          - "What's going well?"
+          - "What's challenging?"
+          - "Am I supporting you effectively?"
+      
+      quarterly_deeper_reviews:
+        what: "More structured review of performance and goals"
+        format: "Use similar structure to annual review but lighter weight"
+        benefit: "No surprises at annual review - they know where they stand"
+  
+  # --------------------------------------------------------------------------
+  # Goal Setting
+  # --------------------------------------------------------------------------
+  
+  goal_setting:
+    
+    smart_framework:
+      
+      specific:
+        definition: "Clear and unambiguous - anyone reading it understands what success means"
+        
+        bad_goal: "Improve detection coverage"
+        why_bad: "What does 'improve' mean? How much? Coverage of what?"
+        
+        good_goal: "Increase MITRE ATT&CK detection coverage from 60% to 80% of techniques"
+        why_good: "Specific metric (60% to 80%), specific framework (ATT&CK), clear definition of success"
+      
+      measurable:
+        definition: "Quantifiable - you can objectively determine if goal was achieved"
+        
+        bad_goal: "Be better at communicating with stakeholders"
+        why_bad: "How do you measure 'better'? Who decides if it's achieved?"
+        
+        good_goal: "Present quarterly detection metrics to security leadership (4 presentations), with average satisfaction score >4/5"
+        why_good: "Countable (4 presentations), measurable (satisfaction score), objective criteria"
+      
+      achievable:
+        definition: "Stretch goal but realistic given resources and constraints"
+        
+        bad_goal: "Eliminate all security vulnerabilities in the company"
+        why_bad: "Impossible goal sets person up for failure"
+        
+        good_goal: "Reduce critical vulnerabilities in production from 50 to <10"
+        why_good: "Ambitious (80% reduction) but achievable with focused effort"
+      
+      relevant:
+        definition: "Aligned with team/company goals and person's role"
+        
+        bad_goal: "Learn machine learning" (for detection engineer who doesn't need ML)
+        why_bad: "Not relevant to their role or team priorities"
+        
+        good_goal: "Build detection coverage for cloud misconfigurations (AWS, Azure, GCP)"
+        why_good: "Directly supports team's cloud security priority"
+      
+      time_bound:
+        definition: "Clear deadline or timeframe with milestones"
+        
+        bad_goal: "Ship 40 detections" (no timeline)
+        why_bad: "When? In 1 year? 5 years? Impossible to track progress"
+        
+        good_goal: "Ship 40 production detections by end of year: Q1=10, Q2=15, Q3=10, Q4=5"
+        why_good: "Clear deadline (end of year), quarterly milestones for tracking progress"
+    
+    goal_categories:
+      
+      technical_delivery:
+        what: "Concrete technical work to ship"
+        
+        examples:
+          detection_engineer:
+            - "Ship 40 production detections with <5% false positive rate by end of year"
+            - "Reduce mean time to deploy detection from 2 weeks to 3 days"
+            - "Achieve 80% MITRE ATT&CK coverage across cloud environments"
+          
+          incident_responder:
+            - "Lead response for 15+ security incidents with clear documentation"
+            - "Reduce mean time to contain incidents from 4 hours to 2 hours"
+            - "Create 10 response runbooks for common incident types"
+          
+          platform_engineer:
+            - "Build detection-as-code CI/CD pipeline with <1 day deployment time"
+            - "Migrate 100 legacy detections to new platform format"
+            - "Achieve 99.9% uptime for detection platform"
+      
+      impact_and_influence:
+        what: "Broader impact beyond individual technical work"
+        
+        examples:
+          - "Present detection engineering methodology at company tech talk (>50 attendees)"
+          - "Mentor 2 junior engineers, with both showing measurable improvement"
+          - "Lead purple team exercise with red team, resulting in 5 new detections"
+          - "Publish blog post on detection techniques, shared by 100+ security professionals"
+          - "Improve team process: reduce false positive rate across team from 8% to 4%"
+      
+      growth_and_learning:
+        what: "Skills development and learning"
+        
+        examples:
+          - "Complete AWS Security Specialty certification"
+          - "Learn Rust and contribute to open-source detection tool"
+          - "Attend 2 security conferences and share learnings with team"
+          - "Develop expertise in Kubernetes security (presented to team)"
+          - "Improve presentation skills: deliver 3 tech talks with positive feedback"
+      
+      collaboration_and_leadership:
+        what: "Working with others and showing leadership"
+        
+        examples:
+          - "Partner with SOC to improve alert quality - reduce escalations by 30%"
+          - "Lead cross-team project with detection and incident response teams"
+          - "Unblock 3 major projects by resolving dependencies or technical challenges"
+          - "Build relationship with engineering team, become go-to security partner"
+    
+    number_of_goals:
+      recommendation: "3-5 goals total for the year"
+      
+      why_not_more:
+        - "More than 5 becomes impossible to focus on all"
+        - "People spread effort too thin"
+        - "Hard to remember what they're working toward"
+      
+      distribution:
+        - "2-3 technical delivery goals (core job responsibilities)"
+        - "1-2 impact/influence goals (broader contribution)"
+        - "1 growth/learning goal (personal development)"
+    
+    collaborative_goal_setting:
+      
+      process:
+        
+        step_1_employee_drafts:
+          what: "Employee writes initial draft based on team roadmap and their development areas"
+          why: "Ownership - they're more committed to goals they helped create"
+        
+        step_2_manager_reviews:
+          what: "You review draft and provide feedback"
+          common_issues:
+            - "Goals too vague - need more specificity"
+            - "Goals too easy - need to be stretch goals"
+            - "Goals not aligned with team priorities - need adjustment"
+            - "Too many goals - need to focus on top 3-5"
+        
+        step_3_discuss_and_align:
+          what: "1-on-1 discussion to finalize goals together"
+          your_questions:
+            - "Why did you choose these goals?"
+            - "How do these goals help you grow?"
+            - "What support do you need from me to achieve these?"
+        
+        step_4_document:
+          what: "Write final goals in performance management system"
+          include: "Goal statement, success metrics, timeline, how you'll support them"
+      
+      if_disagreement:
+        listen_first: "Understand why they want different goal"
+        explain_constraints: "Share business context or team priorities they might not see"
+        find_compromise: "Adjust goal to address both perspectives if possible"
+        manager_has_final_call: "But use it rarely - better to align than dictate"
+  
+  # --------------------------------------------------------------------------
+  # Performance Ratings
+  # --------------------------------------------------------------------------
+  
+  performance_ratings:
+    
+    typical_rating_scale:
+      
+      exceeds_expectations:
+        definition: "Top 10-20% - significantly exceeded goals, multiplier impact on team"
+        
+        characteristics:
+          - "Exceeded all goals, some by significant margin"
+          - "Impact beyond their role - helped others succeed"
+          - "Demonstrated skills above their level"
+          - "Solved problems others couldn't"
+          - "Became go-to person for area of expertise"
+          - "Proactive - identified and solved problems before asked"
+          - "Elevated team performance through their work"
+        
+        compensation_impact:
+          merit_increase: "8-15% raise (highest tier)"
+          bonus: "120-150% of target bonus"
+          equity_refresh: "Large refresh grant (if applicable)"
+        
+        promotion_readiness: "Strong candidate for promotion within 6-12 months"
+        
+        real_example: |
+          Alice (Detection Engineer, L4):
+          - Goal: Ship 40 detections. Actual: 65 detections with <2% FP rate (163% of goal)
+          - Reduced mean time to deploy from 2 weeks to 2 days (automation)
+          - Mentored 2 junior engineers who both got promoted
+          - Presented at BSides conference (company visibility)
+          - Created open-source detection framework adopted by 5 other companies
+          - Impact: Made entire team more productive, industry recognition
+          
+          Rating: Exceeds Expectations
+          Compensation: 12% merit increase, 140% bonus, large equity refresh
+      
+      meets_expectations:
+        definition: "70-80% of employees - met all goals, reliable solid contributor"
+        
+        characteristics:
+          - "Achieved all or most goals"
+          - "Consistent high-quality work throughout year"
+          - "Good team player, helped others when asked"
+          - "Reliable and dependable"
+          - "No major issues or incidents"
+        
+        compensation_impact:
+          merit_increase: "3-5% raise (standard)"
+          bonus: "100% of target bonus"
+          equity_refresh: "Standard refresh grant"
+        
+        real_example: |
+          Bob (Detection Engineer, L4):
+          - Goal: Ship 40 detections. Actual: 42 detections with 4% FP rate (105% of goal)
+          - Consistent high-quality work throughout year
+          - Good team player, helped others debug issues
+          - Completed AWS Security certification as planned
+          - No major incidents or issues
+          - Impact: Solid, reliable performer
+          
+          Rating: Meets Expectations
+          Compensation: 4% merit increase, 100% target bonus, standard equity refresh
+        
+        note: "This is the EXPECTED performance. Nothing wrong with 'meets' - it's the baseline we hired for."
+      
+      partially_meets_expectations:
+        definition: "5-10% of employees - met some goals but fell short on others, some concerns"
+        
+        characteristics:
+          - "Achieved some goals but missed others"
+          - "Quality or productivity concerns"
+          - "Required more management than expected for level"
+          - "Some performance issues addressed during year"
+          - "Improvement needed to stay at current level"
+        
+        compensation_impact:
+          merit_increase: "0-2% raise (minimal or none)"
+          bonus: "50-80% of target bonus"
+          equity_refresh: "Reduced or none"
+        
+        next_steps:
+          - "Performance improvement plan (PIP) if issues serious"
+          - "Very clear goals for next quarter/half with explicit expectations"
+          - "Weekly check-ins instead of biweekly"
+          - "Must improve to 'meets' or face consequences"
+        
+        real_example: |
+          Carol (Detection Engineer, L4):
+          - Goal: Ship 40 detections. Actual: 22 detections with 12% FP rate (55% of goal)
+          - Multiple quality issues requiring rework by others
+          - Missed deadlines on 3 major projects
+          - Defensive when receiving feedback
+          - Required significant management time and intervention
+          
+          Rating: Partially Meets Expectations
+          Action: 60-day PIP starting Q1 with very specific goals
+          Compensation: 0% merit increase, 50% target bonus, no equity refresh
+      
+      does_not_meet_expectations:
+        definition: "<5% of employees - significant performance issues, termination likely"
+        
+        characteristics:
+          - "Failed to achieve most goals"
+          - "Significant quality, productivity, or behavioral issues"
+          - "Multiple serious incidents or problems"
+          - "PIP in place and not improving"
+          - "Not functioning at level expected for role"
+        
+        compensation_impact:
+          merit_increase: "0%"
+          bonus: "0%"
+          equity_refresh: "None"
+        
+        next_steps:
+          immediate: "Termination or final PIP (rarely successful)"
+          timeline: "Usually managed out within 30-90 days"
+        
+        note: "This rating is rare. If someone is this far gone, you should have managed them out earlier."
+    
+    forced_ranking_or_curve:
+      
+      what_it_is: "Company mandates distribution of ratings (e.g., top 20% exceeds, middle 70% meets, bottom 10% below)"
+      
+      where_common: "Large tech companies (Amazon, Microsoft historically)"
+      
+      arguments_for:
+        - "Prevents grade inflation (everyone gets 'exceeds')"
+        - "Forces managers to differentiate performance"
+        - "Ensures budgets are respected"
+      
+      arguments_against:
+        - "Creates competition instead of collaboration"
+        - "Punishes good teams (if everyone performs well, someone still gets 'below')"
+        - "Demotivating - performing well but getting 'meets' because of curve"
+        - "Managers game the system"
+      
+      if_your_company_uses_curves:
+        accept_it: "You can't change company policy"
+        be_transparent: "Explain the curve to your team so they understand it's not just your opinion"
+        fight_for_your_people: "In calibration, advocate strongly for your top performers"
+        manage_expectations: "Help people understand that 'meets' on a curve is still good performance"
+  
+  # --------------------------------------------------------------------------
+  # Writing Performance Reviews
+  # --------------------------------------------------------------------------
+  
+  writing_performance_reviews:
+    
+    structure:
+      
+      summary:
+        what: "2-3 sentences: overall assessment and rating"
+        
+        example: |
+          Alice had an exceptional year, significantly exceeding all goals and making 
+          multiplier impact on the team. She shipped 65 detections (vs 40 goal), reduced 
+          deployment time from 2 weeks to 2 days, and mentored 2 engineers who both got 
+          promoted. Rating: Exceeds Expectations.
+      
+      goal_by_goal_assessment:
+        what: "Review each goal: what was achieved, evidence, rating"
+        
+        structure_per_goal:
+          goal: "State the original goal"
+          achievement: "What they actually did"
+          evidence: "Specific examples and data"
+          assessment: "Exceeded / Met / Partially Met / Not Met"
+        
+        example: |
+          Goal: Ship 40 production detections with <5% false positive rate
+          
+          Achievement: Shipped 65 detections with average 2.8% FP rate
+          
+          Evidence:
+          - Q1: 15 detections (vs 10 planned)
+          - Q2: 20 detections (vs 15 planned)
+          - Q3: 18 detections (vs 10 planned)
+          - Q4: 12 detections (vs 5 planned)
+          - FP rate tracked monthly, never exceeded 4%, average 2.8%
+          
+          Assessment: Significantly Exceeded (163% of goal, excellent quality)
+      
+      strengths:
+        what: "3-5 key strengths with specific examples"
+        
+        be_specific: "Don't just say 'great communicator' - show HOW they communicated well"
+        
+        example: |
+          Technical Excellence: Built detection platform automation that reduced deployment 
+          time from 2 weeks to 2 days. The pipeline includes automated testing, git workflow, 
+          and one-command deployment. Other teams are now adopting this approach.
+          
+          Mentorship: Mentored Sarah and Tom (both junior engineers). Sarah shipped her first 
+          production detection within 3 weeks of starting. Tom improved his code quality 
+          significantly - his PR reviews went from 10+ comments to 2-3. Both got promoted 
+          this year, partly due to her mentorship.
+      
+      areas_for_development:
+        what: "2-3 growth areas with constructive framing"
+        
+        even_for_exceeds: "Even top performers have growth areas - this isn't just for underperformers"
+        
+        framing: "Not deficiencies, but opportunities to grow to next level"
+        
+        example: |
+          Strategic Communication: While Alice is excellent at explaining technical topics, 
+          she could improve at framing work in business terms for executives. For example, 
+          when presenting detection metrics, focus on business impact (prevented breaches, 
+          compliance coverage) rather than just technical metrics (# of detections, FP rate). 
+          This will be important for senior/staff level.
+      
+      overall_assessment_and_rating:
+        what: "Final summary with rating and justification"
+        
+        example: |
+          Alice had an exceptional year. She exceeded all goals by significant margins, 
+          made the entire team more productive through automation, and elevated others 
+          through mentorship. Her work resulted in both internal impact (team productivity) 
+          and external visibility (conference talk, open-source). She's operating above her 
+          current level and is ready for promotion to L5.
+          
+          Rating: Exceeds Expectations
+    
+    tone_and_language:
+      
+      be_specific_not_vague:
+        vague: "Did great work on detections"
+        specific: "Shipped 65 detections covering 80% of MITRE ATT&CK techniques"
+      
+      use_evidence:
+        without_evidence: "Great team player"
+        with_evidence: "Mentored Sarah and Tom - both improved significantly and got promoted"
+      
+      be_honest_but_constructive:
+        harsh: "Poor communication skills, struggles to explain work"
+        constructive: "Opportunity to improve executive communication by framing technical work in business terms"
+      
+      avoid_comparison_to_others:
+        bad: "Not as strong as Sarah in this area"
+        good: "Could develop stronger skills in X to reach senior level"
+    
+    getting_input:
+      
+      self_review:
+        what: "Employee writes their own assessment of performance"
+        
+        why_useful:
+          - "Shows what they think is important"
+          - "Reveals accomplishments you might have missed"
+          - "Shows their self-awareness"
+          - "Provides their perspective on challenges"
+        
+        questions_to_ask:
+          - "What are you most proud of this year?"
+          - "Which goals did you achieve and how?"
+          - "What challenges did you face?"
+          - "What would you like to focus on next year?"
+          - "How can I better support you?"
+      
+      peer_feedback:
+        what: "Collect feedback from people they work with"
+        
+        who_to_ask:
+          - "People they collaborate with frequently"
+          - "People they've helped or mentored"
+          - "People in other teams they've worked with"
+        
+        questions_to_ask:
+          - "What does [person] do particularly well?"
+          - "Where could [person] improve?"
+          - "Would you want to work with [person] on future projects? Why?"
+        
+        how_to_use:
+          - "Look for patterns across multiple people"
+          - "Use specific examples in review"
+          - "Don't reveal who said what (keep feedback anonymous)"
+  
+  # --------------------------------------------------------------------------
+  # Calibration Process
+  # --------------------------------------------------------------------------
+  
+  calibration_process:
+    
+    what_it_is: "Managers meet to review performance ratings and ensure consistency across team"
+    
+    why_it_matters:
+      - "Prevents manager bias (too harsh or too lenient)"
+      - "Ensures fairness across organization"
+      - "Creates consistent bar for ratings"
+      - "Protects against legal challenges"
+    
+    who_attends: "All managers at same level + their manager (director/VP)"
+    
+    process:
+      
+      step_1_prepare:
+        - "Each manager prepares summary of their ratings distribution"
+        - "Have specific examples ready for top and bottom performers"
+        - "Know your justification for each rating"
+      
+      step_2_review_distributions:
+        - "Share rating distributions across teams"
+        - "Identify outliers (one manager has 50% exceeds, another has 5%)"
+        - "Discuss whether distributions make sense given team composition"
+      
+      step_3_discuss_edge_cases:
+        focus_on:
+          - "People on borderline between ratings (meets vs exceeds)"
+          - "People getting low ratings (does not meet, partially meets)"
+          - "People getting promoted"
+        
+        each_manager_presents:
+          - "Here's the rating I'm recommending"
+          - "Here's the evidence (goals achieved, impact, examples)"
+          - "Here's why this rating vs one above or below"
+        
+        group_discusses:
+          - "Is this consistent with how we've rated others?"
+          - "Is evidence strong enough for this rating?"
+          - "Should rating be adjusted up or down?"
+      
+      step_4_adjust_and_finalize:
+        - "Managers adjust ratings based on calibration discussion"
+        - "Final ratings locked after calibration"
+        - "Deliver reviews to employees within week"
+    
+    calibration_tips:
+      
+      fight_for_your_top_performers:
+        - "Bring strong evidence for 'exceeds' ratings"
+        - "Compare to others getting 'exceeds' - is your person as strong?"
+        - "Don't back down if you truly believe they deserve it"
+      
+      be_honest_about_poor_performers:
+        - "Don't inflate ratings to avoid difficult conversation"
+        - "Other managers will see through it in calibration"
+        - "You're doing person disservice by not being honest"
+      
+      learn_from_other_managers:
+        - "See what 'exceeds' looks like on other teams"
+        - "Calibrate your expectations based on org standards"
+        - "Use calibration to improve your own evaluation skills"
+  
+  # --------------------------------------------------------------------------
+  # Delivering Performance Reviews
+  # --------------------------------------------------------------------------
+  
+  delivering_performance_reviews:
+    
+    preparation:
+      
+      schedule_1_on_1:
+        duration: "60 minutes (not 30 - this is important conversation)"
+        timing: "Don't do Friday afternoon or right before their vacation"
+        privacy: "Private space where interruptions won't happen"
+      
+      send_review_in_advance:
+        when: "24 hours before meeting (optional, depends on company policy)"
+        why: "Gives them time to process before conversation"
+        why_not: "Some managers prefer to deliver in person first for emotional support"
+      
+      prepare_for_their_reaction:
+        if_exceeds: "They'll be excited - be ready to discuss promotion timeline, comp increase"
+        if_meets: "Might be disappointed if they expected exceeds - be ready to explain"
+        if_below: "Might be upset or defensive - be ready for difficult conversation"
+    
+    the_conversation:
+      
+      start_with_summary:
+        what: "Share overall rating and 2-3 sentence summary"
+        
+        example: "You had a great year. You met all your goals, shipped quality work consistently, and were a reliable team member. Your rating is Meets Expectations, which reflects solid performance."
+      
+      walk_through_review:
+        - "Go through each goal and how they did"
+        - "Highlight specific strengths with examples"
+        - "Discuss growth areas constructively"
+        - "Explain overall rating and justification"
+      
+      address_compensation:
+        - "Share merit increase percentage"
+        - "Share bonus amount or percentage"
+        - "Share equity refresh if applicable"
+        - "Explain how these relate to rating and company budget"
+      
+      discuss_next_steps:
+        - "What goals for next year?"
+        - "How can I support your development?"
+        - "If promotion-ready, what's the timeline?"
+        - "If performance concerns, what's the improvement plan?"
+      
+      give_them_space_to_respond:
+        - "How are you feeling about this review?"
+        - "Do you have questions or concerns?"
+        - "What would you like to discuss?"
+    
+    handling_different_reactions:
+      
+      they_agree_and_are_happy:
+        response: "Great! Let's talk about next year and how to keep this momentum."
+      
+      they_disagree_with_rating:
+        listen: "Tell me why you feel differently. What did I miss?"
+        explain: "Here's the evidence and reasoning. Here's how your performance compared to expectations for this level."
+        if_still_disagree: "I hear you disagree. I've made the final decision based on [evidence]. Let's focus on what we can do going forward."
+      
+      they_are_upset_or_crying:
+        give_space: "It's okay to be upset. Take a moment if you need."
+        acknowledge: "I know this is hard to hear."
+        be_kind_but_honest: "I care about you succeeding, which is why I need to be honest about performance."
+        dont_backtrack: "Don't change the rating just because they're upset - that's dishonest"
+      
+      they_threaten_to_quit:
+        stay_calm: "I don't want you to quit. Let's talk about what would make this better."
+        if_about_compensation: "I can't change your rating or comp at this point, but let's discuss your concerns."
+        if_about_role_fit: "Maybe we need to think about whether this role is right fit. Let's explore that."
+  
+  # --------------------------------------------------------------------------
+  # Key Takeaways
+  # --------------------------------------------------------------------------
+  
+  key_takeaways:
+    - "Performance management is continuous, not annual - reviews summarize year-long conversations"
+    - "If review contains surprises, you've failed as manager - feedback should be continuous"
+    - "Goal setting: 3-5 SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)"
+    - "Goal categories: technical delivery (2-3), impact/influence (1-2), growth/learning (1)"
+    - "Rating scale: Exceeds (top 10-20%), Meets (70-80%), Partially Meets (5-10%), Does Not Meet (<5%)"
+    - "Exceeds means significantly exceeded goals with multiplier impact, not just 'did good work'"
+    - "Meets is expected solid performance - nothing wrong with 'meets', it's what we hired for"
+    - "Calibration ensures fairness across organization - fight for your top performers with evidence"
+    - "Delivering reviews: 60 min meeting, share summary first, walk through details, discuss comp and next steps"
+    - "Handle disagreement professionally: listen, explain evidence, make final call, focus on future"
+
+---
